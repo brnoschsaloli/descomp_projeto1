@@ -29,7 +29,7 @@ architecture arquitetura of contador is
   signal Data_IN : std_logic_vector (7 downto 0);
   signal ROM_Address : std_logic_vector (8 downto 0);
   signal Data_OUT : std_logic_vector (7 downto 0);
-  signal Instruction_IN : std_logic_vector (13 downto 0);
+  signal Instruction_IN : std_logic_vector (12 downto 0);
   signal Saida_Decoder_Enderecos : std_logic_vector (7 downto 0);
   signal Saida_Decoder_Blocos : std_logic_vector (7 downto 0);
   signal Hab_LEDR : std_logic;
@@ -68,7 +68,7 @@ begin
 CPU : entity work.CPU
 			 port map (CLK => CLK, Reset => '0', Instruction_IN => Instruction_IN, Data_IN => Data_IN, ROM_Address => ROM_Address, WR => WR, RD => RD, Data_Address => Data_Address, Data_OUT => Data_OUT);
 
-ROM1 : entity work.memoriaROM   generic map (dataWidth => 14, addrWidth => 9)
+ROM1 : entity work.memoriaROM   generic map (dataWidth => larguraDados, addrWidth => larguraEnderecos)
           port map (Endereco => ROM_Address, Dado => Instruction_IN);
 			 
 			 

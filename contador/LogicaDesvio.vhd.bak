@@ -2,9 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity LogicaDesvio is
-  port ( entrada_flag_equal : in std_logic;
-			entrada_flag_less : in std_logic;
-			entrada_jlt : in std_logic;
+  port ( entrada_flag : in std_logic;
 			entrada_jeq  : in std_logic;
 			entrada_jmp  : in std_logic;
 			entrada_jsr  : in std_logic;
@@ -16,7 +14,7 @@ end entity;
 architecture comportamento of LogicaDesvio is
 
   begin
-saida <= "01" when ((entrada_flag_equal and entrada_jeq) or (entrada_flag_less and entrada_jlt) or entrada_jsr or entrada_jmp) else
+saida <= "01" when ((entrada_flag and entrada_jeq) or entrada_jsr or entrada_jmp) else
 			"10" when entrada_ret else
 			"00";
 end architecture;

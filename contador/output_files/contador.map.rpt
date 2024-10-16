@@ -1,5 +1,5 @@
 Analysis & Synthesis report for contador
-Wed Oct 16 15:10:13 2024
+Wed Oct 16 20:13:59 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -22,49 +22,51 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  14. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUXProxPC
  15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA
  16. Parameter Settings for User Entity Instance: CPU:CPU|FlipFlop:FlagZero
- 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
- 18. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REG_RETORNO
- 19. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
- 20. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
- 21. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 22. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
- 23. Parameter Settings for User Entity Instance: FlipFlop:FFLED9
- 24. Parameter Settings for User Entity Instance: FlipFlop:FFLED8
- 25. Parameter Settings for User Entity Instance: registradorGenerico:REGLEDR
- 26. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX0
- 27. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX1
- 28. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX2
- 29. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX3
- 30. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX4
- 31. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX5
- 32. Parameter Settings for User Entity Instance: FlipFlop:FFKEY0
- 33. Port Connectivity Checks: "FlipFlop:FFKEY0"
- 34. Port Connectivity Checks: "conversorHex7Seg:DECHEX5"
- 35. Port Connectivity Checks: "conversorHex7Seg:DECHEX4"
- 36. Port Connectivity Checks: "conversorHex7Seg:DECHEX3"
- 37. Port Connectivity Checks: "conversorHex7Seg:DECHEX2"
- 38. Port Connectivity Checks: "conversorHex7Seg:DECHEX1"
- 39. Port Connectivity Checks: "conversorHex7Seg:DECHEX0"
- 40. Port Connectivity Checks: "registradorGenerico:REGHEX5"
- 41. Port Connectivity Checks: "registradorGenerico:REGHEX4"
- 42. Port Connectivity Checks: "registradorGenerico:REGHEX3"
- 43. Port Connectivity Checks: "registradorGenerico:REGHEX2"
- 44. Port Connectivity Checks: "registradorGenerico:REGHEX1"
- 45. Port Connectivity Checks: "registradorGenerico:REGHEX0"
- 46. Port Connectivity Checks: "registradorGenerico:REGLEDR"
- 47. Port Connectivity Checks: "FlipFlop:FFLED8"
- 48. Port Connectivity Checks: "FlipFlop:FFLED9"
- 49. Port Connectivity Checks: "decoder3x8:DEC3X8_ENDERECOS"
- 50. Port Connectivity Checks: "decoder3x8:DEC3X8_BLOCOS"
- 51. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_RETORNO"
- 52. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 53. Port Connectivity Checks: "CPU:CPU|FlipFlop:FlagZero"
- 54. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGA"
- 55. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUXProxPC"
- 56. Port Connectivity Checks: "CPU:CPU"
- 57. Post-Synthesis Netlist Statistics for Top Partition
- 58. Elapsed Time Per Partition
- 59. Analysis & Synthesis Messages
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|FlipFlop:FlagLess
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REG_RETORNO
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
+ 22. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 23. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
+ 24. Parameter Settings for User Entity Instance: FlipFlop:FFLED9
+ 25. Parameter Settings for User Entity Instance: FlipFlop:FFLED8
+ 26. Parameter Settings for User Entity Instance: registradorGenerico:REGLEDR
+ 27. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX0
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX1
+ 29. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX2
+ 30. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX3
+ 31. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX4
+ 32. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX5
+ 33. Parameter Settings for User Entity Instance: FlipFlop:FFKEY0
+ 34. Port Connectivity Checks: "FlipFlop:FFKEY0"
+ 35. Port Connectivity Checks: "conversorHex7Seg:DECHEX5"
+ 36. Port Connectivity Checks: "conversorHex7Seg:DECHEX4"
+ 37. Port Connectivity Checks: "conversorHex7Seg:DECHEX3"
+ 38. Port Connectivity Checks: "conversorHex7Seg:DECHEX2"
+ 39. Port Connectivity Checks: "conversorHex7Seg:DECHEX1"
+ 40. Port Connectivity Checks: "conversorHex7Seg:DECHEX0"
+ 41. Port Connectivity Checks: "registradorGenerico:REGHEX5"
+ 42. Port Connectivity Checks: "registradorGenerico:REGHEX4"
+ 43. Port Connectivity Checks: "registradorGenerico:REGHEX3"
+ 44. Port Connectivity Checks: "registradorGenerico:REGHEX2"
+ 45. Port Connectivity Checks: "registradorGenerico:REGHEX1"
+ 46. Port Connectivity Checks: "registradorGenerico:REGHEX0"
+ 47. Port Connectivity Checks: "registradorGenerico:REGLEDR"
+ 48. Port Connectivity Checks: "FlipFlop:FFLED8"
+ 49. Port Connectivity Checks: "FlipFlop:FFLED9"
+ 50. Port Connectivity Checks: "decoder3x8:DEC3X8_ENDERECOS"
+ 51. Port Connectivity Checks: "decoder3x8:DEC3X8_BLOCOS"
+ 52. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_RETORNO"
+ 53. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 54. Port Connectivity Checks: "CPU:CPU|FlipFlop:FlagLess"
+ 55. Port Connectivity Checks: "CPU:CPU|FlipFlop:FlagZero"
+ 56. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGA"
+ 57. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUXProxPC"
+ 58. Port Connectivity Checks: "CPU:CPU"
+ 59. Post-Synthesis Netlist Statistics for Top Partition
+ 60. Elapsed Time Per Partition
+ 61. Analysis & Synthesis Messages
 
 
 
@@ -91,13 +93,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Oct 16 15:10:13 2024       ;
+; Analysis & Synthesis Status     ; Successful - Wed Oct 16 20:13:59 2024       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; contador                                    ;
 ; Top-level Entity Name           ; contador                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 44                                          ;
+; Total registers                 ; 32                                          ;
 ; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -216,29 +218,29 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
-; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/buffer_3_state_8portas.vhd ;         ;
-; buffer_3_state.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/buffer_3_state.vhd         ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/somaConstante.vhd          ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd         ;         ;
-; FlipFlop.vhd                     ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/FlipFlop.vhd               ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd         ;         ;
-; LogicaDesvio.vhd                 ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/LogicaDesvio.vhd           ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/ULASomaSub.vhd             ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd                    ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/memoriaROM.vhd             ;         ;
-; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/decoder3x8.vhd             ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/edgeDetector.vhd           ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/decoderInstru.vhd          ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/memoriaRAM.vhd             ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/conversorHex7Seg.vhd       ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/registradorGenerico.vhd    ;         ;
-; contador.vhd                     ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd               ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd ;         ;
+; buffer_3_state.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state.vhd         ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/somaConstante.vhd          ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd         ;         ;
+; FlipFlop.vhd                     ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/FlipFlop.vhd               ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd         ;         ;
+; LogicaDesvio.vhd                 ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/LogicaDesvio.vhd           ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/ULASomaSub.vhd             ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd                    ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaROM.vhd             ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder3x8.vhd             ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd           ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoderInstru.vhd          ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd             ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/conversorHex7Seg.vhd       ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/registradorGenerico.vhd    ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd               ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -246,25 +248,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 74             ;
+; Estimate of Logic utilization (ALMs needed) ; 48             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 128            ;
+; Combinational ALUT usage for logic          ; 86             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 15             ;
-;     -- 5 input functions                    ; 22             ;
-;     -- 4 input functions                    ; 56             ;
-;     -- <=3 input functions                  ; 35             ;
+;     -- 6 input functions                    ; 4              ;
+;     -- 5 input functions                    ; 13             ;
+;     -- 4 input functions                    ; 36             ;
+;     -- <=3 input functions                  ; 33             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 44             ;
+; Dedicated logic registers                   ; 32             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 68             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 43             ;
-; Total fan-out                               ; 734            ;
-; Average fan-out                             ; 2.38           ;
+; Maximum fan-out                             ; 31             ;
+; Total fan-out                               ; 504            ;
+; Average fan-out                             ; 1.98           ;
 +---------------------------------------------+----------------+
 
 
@@ -273,23 +275,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name         ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
-; |contador                           ; 128 (5)             ; 44 (0)                    ; 0                 ; 0          ; 68   ; 0            ; |contador                                     ; contador            ; work         ;
-;    |CPU:CPU|                        ; 71 (0)              ; 18 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                             ; CPU                 ; work         ;
-;       |FlipFlop:FlagZero|           ; 6 (6)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|FlipFlop:FlagZero           ; FlipFlop            ; work         ;
+; |contador                           ; 86 (3)              ; 32 (0)                    ; 0                 ; 0          ; 68   ; 0            ; |contador                                     ; contador            ; work         ;
+;    |CPU:CPU|                        ; 38 (0)              ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                             ; CPU                 ; work         ;
+;       |FlipFlop:FlagZero|           ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|FlipFlop:FlagZero           ; FlipFlop            ; work         ;
 ;       |LogicaDesvio:LogicaDesvio1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|LogicaDesvio:LogicaDesvio1  ; LogicaDesvio        ; work         ;
-;       |ULASomaSub:ULA1|             ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|ULASomaSub:ULA1             ; ULASomaSub          ; work         ;
-;       |decoderInstru:DEC_Instrucao| ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|decoderInstru:DEC_Instrucao ; decoderInstru       ; work         ;
-;       |muxGenerico2x1:MUX1|         ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico2x1:MUX1         ; muxGenerico2x1      ; work         ;
-;       |muxGenerico4x1:MUXProxPC|    ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico4x1:MUXProxPC    ; muxGenerico4x1      ; work         ;
+;       |ULASomaSub:ULA1|             ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|ULASomaSub:ULA1             ; ULASomaSub          ; work         ;
+;       |decoderInstru:DEC_Instrucao| ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|decoderInstru:DEC_Instrucao ; decoderInstru       ; work         ;
+;       |muxGenerico2x1:MUX1|         ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico2x1:MUX1         ; muxGenerico2x1      ; work         ;
 ;       |registradorGenerico:PC|      ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:PC      ; registradorGenerico ; work         ;
-;       |registradorGenerico:REGA|    ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:REGA    ; registradorGenerico ; work         ;
+;       |registradorGenerico:REGA|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:REGA    ; registradorGenerico ; work         ;
 ;       |somaConstante:incrementaPC|  ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|somaConstante:incrementaPC  ; somaConstante       ; work         ;
 ;    |FlipFlop:FFKEY0|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|FlipFlop:FFKEY0                     ; FlipFlop            ; work         ;
 ;    |conversorHex7Seg:DECHEX0|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|conversorHex7Seg:DECHEX0            ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DECHEX1|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|conversorHex7Seg:DECHEX1            ; conversorHex7Seg    ; work         ;
 ;    |edgeDetector:detectorSub0|      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|edgeDetector:detectorSub0           ; edgeDetector        ; work         ;
-;    |memoriaRAM:RAM1|                ; 19 (19)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM1                     ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM1                     ; memoriaROM          ; work         ;
+;    |memoriaRAM:RAM1|                ; 11 (11)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM1                     ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM1|                ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM1                     ; memoriaROM          ; work         ;
 ;    |registradorGenerico:REGHEX0|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:REGHEX0         ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REGHEX1|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:REGHEX1         ; registradorGenerico ; work         ;
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
@@ -301,13 +302,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+---------------------------------------------+
 ; Register name                                      ; Reason for Removal                          ;
 +----------------------------------------------------+---------------------------------------------+
+; CPU:CPU|FlipFlop:FlagLess|DOUT                     ; Lost fanout                                 ;
 ; registradorGenerico:REGLEDR|DOUT[0..7]             ; Stuck at GND due to stuck port clock_enable ;
 ; FlipFlop:FFLED8|DOUT                               ; Stuck at GND due to stuck port clock_enable ;
 ; FlipFlop:FFLED9|DOUT                               ; Stuck at GND due to stuck port clock_enable ;
 ; registradorGenerico:REGHEX4|DOUT[0..3]             ; Stuck at GND due to stuck port clock_enable ;
 ; registradorGenerico:REGHEX5|DOUT[0..3]             ; Stuck at GND due to stuck port clock_enable ;
-; CPU:CPU|registradorGenerico:REG_RETORNO|DOUT[0..2] ; Stuck at VCC due to stuck port data_in      ;
-; CPU:CPU|registradorGenerico:REG_RETORNO|DOUT[3..8] ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|registradorGenerico:REG_RETORNO|DOUT[0..8] ; Lost fanout                                 ;
 ; memoriaRAM:RAM1|ram~47                             ; Lost fanout                                 ;
 ; memoriaRAM:RAM1|ram~55                             ; Lost fanout                                 ;
 ; memoriaRAM:RAM1|ram~63                             ; Lost fanout                                 ;
@@ -750,20 +751,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; memoriaRAM:RAM1|ram~264                            ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~32                             ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~40                             ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~501                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~509                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~517                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~525                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~277                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~285                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~293                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~301                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~245                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~253                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~261                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~269                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~37                             ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~45                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~502                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~510                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~518                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~526                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~278                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~286                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~294                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~302                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~246                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~254                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~262                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~270                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~38                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~46                             ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~499                            ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~507                            ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~515                            ; Stuck at GND due to stuck port clock_enable ;
@@ -792,21 +793,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; memoriaRAM:RAM1|ram~268                            ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~36                             ; Stuck at GND due to stuck port clock_enable ;
 ; memoriaRAM:RAM1|ram~44                             ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~502                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~510                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~518                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~526                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~278                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~286                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~294                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~302                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~246                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~254                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~262                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~270                            ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~38                             ; Stuck at GND due to stuck port clock_enable ;
-; memoriaRAM:RAM1|ram~46                             ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 531            ;                                             ;
+; memoriaRAM:RAM1|ram~501                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~509                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~517                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~525                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~277                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~285                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~293                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~301                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~245                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~253                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~261                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~269                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~37                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM1|ram~45                             ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 532            ;                                             ;
 +----------------------------------------------------+---------------------------------------------+
 
 
@@ -815,12 +816,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 44    ;
+; Total registers                              ; 32    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Synchronous Load   ; 13    ;
 ; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 20    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -830,11 +831,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |contador|CPU:CPU|decoderInstru:DEC_Instrucao|saida[4]  ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |contador|CPU:CPU|muxGenerico2x1:MUX1|saida_MUX[1]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |contador|CPU:CPU|ULASomaSub:ULA1|saida[7]              ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |contador|CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[3] ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |contador|CPU:CPU|decoderInstru:DEC_Instrucao|saida[1]  ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |contador|CPU:CPU|muxGenerico2x1:MUX1|saida_MUX[7]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |contador|CPU:CPU|ULASomaSub:ULA1|saida[4]              ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |contador|CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[1] ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |contador|CPU:CPU|decoderInstru:DEC_Instrucao|saida[6]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
@@ -903,6 +903,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|FlipFlop:FlagLess ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC ;
 +----------------+-------+----------------------------------------------------+
@@ -949,7 +959,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------+
 ; Parameter Name ; Value ; Type                                ;
 +----------------+-------+-------------------------------------+
-; datawidth      ; 13    ; Signed Integer                      ;
+; datawidth      ; 14    ; Signed Integer                      ;
 ; addrwidth      ; 9     ; Signed Integer                      ;
 +----------------+-------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -1262,6 +1272,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|FlipFlop:FlagLess" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                ;
++------+-------+----------+-----------------------------+
+
+
++-------------------------------------------------------+
 ; Port Connectivity Checks: "CPU:CPU|FlipFlop:FlagZero" ;
 +------+-------+----------+-----------------------------+
 ; Port ; Type  ; Severity ; Details                     ;
@@ -1302,28 +1321,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 44                          ;
+; arriav_ff             ; 32                          ;
 ;     CLR               ; 1                           ;
-;     ENA               ; 24                          ;
-;     ENA SLD           ; 8                           ;
-;     plain             ; 11                          ;
-; arriav_lcell_comb     ; 130                         ;
-;     arith             ; 18                          ;
+;     ENA               ; 16                          ;
+;     ENA SLD           ; 4                           ;
+;     SLD               ; 9                           ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 88                          ;
+;     arith             ; 14                          ;
 ;         1 data inputs ; 9                           ;
 ;         2 data inputs ; 1                           ;
-;         4 data inputs ; 8                           ;
-;     normal            ; 112                         ;
+;         4 data inputs ; 4                           ;
+;     normal            ; 74                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 16                          ;
-;         4 data inputs ; 48                          ;
-;         5 data inputs ; 22                          ;
-;         6 data inputs ; 15                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 11                          ;
+;         4 data inputs ; 32                          ;
+;         5 data inputs ; 13                          ;
+;         6 data inputs ; 4                           ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.60                        ;
-; Average LUT depth     ; 5.48                        ;
+; Max LUT depth         ; 6.30                        ;
+; Average LUT depth     ; 3.68                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1342,159 +1362,171 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Oct 16 15:10:08 2024
+    Info: Processing started: Wed Oct 16 20:13:55 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off contador -c contador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file decoder2x8.vhd
+    Info (12022): Found design unit 1: decoder2x8-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder2x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder2x8 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder2x8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradores.vhd
+    Info (12022): Found design unit 1: bancoRegistradores-Behavioral File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/bancoRegistradores.vhd Line: 18
+    Info (12023): Found entity 1: bancoRegistradores File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/bancoRegistradores.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
-    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/buffer_3_state_8portas.vhd Line: 11
-    Info (12023): Found entity 1: buffer_3_state_8portas File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/buffer_3_state_8portas.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8portas File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state.vhd
-    Info (12022): Found design unit 1: buffer_3_state-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/buffer_3_state.vhd Line: 12
-    Info (12023): Found entity 1: buffer_3_state File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/buffer_3_state.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state.vhd Line: 12
+    Info (12023): Found entity 1: buffer_3_state File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file somaConstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/somaConstante.vhd Line: 18
-    Info (12023): Found entity 1: somaConstante File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/somaConstante.vhd Line: 5
+    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/somaConstante.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file FlipFlop.vhd
-    Info (12022): Found design unit 1: FlipFlop-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/FlipFlop.vhd Line: 15
-    Info (12023): Found entity 1: FlipFlop File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/FlipFlop.vhd Line: 4
+    Info (12022): Found design unit 1: FlipFlop-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/FlipFlop.vhd Line: 15
+    Info (12023): Found entity 1: FlipFlop File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/FlipFlop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-Behavioral File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 19
-    Info (12023): Found entity 1: muxGenerico4x1 File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 5
+    Info (12022): Found design unit 1: muxGenerico4x1-Behavioral File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 19
+    Info (12023): Found entity 1: muxGenerico4x1 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file LogicaDesvio.vhd
-    Info (12022): Found design unit 1: LogicaDesvio-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/LogicaDesvio.vhd Line: 14
-    Info (12023): Found entity 1: LogicaDesvio File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/LogicaDesvio.vhd Line: 4
+    Info (12022): Found design unit 1: LogicaDesvio-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/LogicaDesvio.vhd Line: 16
+    Info (12023): Found entity 1: LogicaDesvio File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/LogicaDesvio.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/ULASomaSub.vhd Line: 15
-    Info (12023): Found entity 1: ULASomaSub File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/ULASomaSub.vhd Line: 5
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/ULASomaSub.vhd Line: 16
+    Info (12023): Found entity 1: ULASomaSub File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/ULASomaSub.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
-    Info (12022): Found design unit 1: CPU-arquitetura File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 24
-    Info (12023): Found entity 1: CPU File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 4
+    Info (12022): Found design unit 1: CPU-arquitetura File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 24
+    Info (12023): Found entity 1: CPU File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/memoriaROM.vhd Line: 16
-    Info (12023): Found entity 1: memoriaROM File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/memoriaROM.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaROM.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaROM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
-    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/decoder3x8.vhd Line: 10
-    Info (12023): Found entity 1: decoder3x8 File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/decoder3x8.vhd Line: 4
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder3x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder3x8 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder3x8.vhd Line: 4
 Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoderInstru.vhd
-    Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/decoderInstru.vhd Line: 10
-    Info (12023): Found entity 1: decoderInstru File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/decoderInstru.vhd Line: 4
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoderInstru.vhd Line: 10
+    Info (12023): Found entity 1: decoderInstru File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoderInstru.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/memoriaRAM.vhd Line: 21
-    Info (12023): Found entity 1: memoriaRAM File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/memoriaRAM.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/conversorHex7Seg.vhd Line: 4
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/conversorHex7Seg.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/registradorGenerico.vhd Line: 4
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/registradorGenerico.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-arquitetura File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 24
-    Info (12023): Found entity 1: contador File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 4
+    Info (12022): Found design unit 1: contador-arquitetura File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 24
+    Info (12023): Found entity 1: contador File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder2x4.vhd
+    Info (12022): Found design unit 1: decoder2x4-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder2x4.vhd Line: 11
+    Info (12023): Found entity 1: decoder2x4 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder2x4.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file demuxGenerico1x4.vhd
+    Info (12022): Found design unit 1: demuxGenerico1x4-Behavioral File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/demuxGenerico1x4.vhd Line: 21
+    Info (12023): Found entity 1: demuxGenerico1x4 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/demuxGenerico1x4.vhd Line: 5
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 68
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX1" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 55
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUXProxPC" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 63
-Info (10041): Inferred latch for "saida_MUX[0]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (10041): Inferred latch for "saida_MUX[1]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (10041): Inferred latch for "saida_MUX[2]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (10041): Inferred latch for "saida_MUX[3]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (10041): Inferred latch for "saida_MUX[4]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (10041): Inferred latch for "saida_MUX[5]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (10041): Inferred latch for "saida_MUX[6]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (10041): Inferred latch for "saida_MUX[7]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (10041): Inferred latch for "saida_MUX[8]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGA" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 73
-Info (12128): Elaborating entity "FlipFlop" for hierarchy "CPU:CPU|FlipFlop:FlagZero" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 76
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 80
-Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:incrementaPC" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 86
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA1" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 91
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DEC_Instrucao" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 95
-Info (12128): Elaborating entity "LogicaDesvio" for hierarchy "CPU:CPU|LogicaDesvio:LogicaDesvio1" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/CPU.vhd Line: 101
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 71
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 75
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DEC3X8_BLOCOS" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 78
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGHEX0" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 95
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DECHEX0" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 113
-Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:TSSW07" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 143
-Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:TSSW8" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 146
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 153
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 68
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX1" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 59
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUXProxPC" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 67
+Info (10041): Inferred latch for "saida_MUX[0]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (10041): Inferred latch for "saida_MUX[1]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (10041): Inferred latch for "saida_MUX[2]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (10041): Inferred latch for "saida_MUX[3]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (10041): Inferred latch for "saida_MUX[4]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (10041): Inferred latch for "saida_MUX[5]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (10041): Inferred latch for "saida_MUX[6]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (10041): Inferred latch for "saida_MUX[7]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (10041): Inferred latch for "saida_MUX[8]" at muxGenerico4x1.vhd(22) File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGA" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 77
+Info (12128): Elaborating entity "FlipFlop" for hierarchy "CPU:CPU|FlipFlop:FlagZero" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 80
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 88
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:incrementaPC" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 94
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA1" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 99
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DEC_Instrucao" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 103
+Info (12128): Elaborating entity "LogicaDesvio" for hierarchy "CPU:CPU|LogicaDesvio:LogicaDesvio1" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 109
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 71
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 75
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DEC3X8_BLOCOS" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 78
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGHEX0" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 95
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DECHEX0" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 113
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:TSSW07" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 143
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:TSSW8" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 146
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 153
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/memoriaRAM.vhd Line: 27
+    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 27
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "Data_IN[7]" into a selector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_IN[6]" into a selector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_IN[5]" into a selector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_IN[4]" into a selector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_IN[3]" into a selector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_IN[2]" into a selector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_IN[1]" into a selector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_IN[0]" into a selector File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico2x1.vhd Line: 10
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[0]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[1]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[2]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[3]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[4]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[5]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[6]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[7]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[8]" is permanently enabled File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/muxGenerico4x1.vhd Line: 22
+    Warning (13048): Converted tri-state node "Data_IN[7]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_IN[6]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_IN[5]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_IN[4]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_IN[3]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_IN[2]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_IN[1]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_IN[0]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[0]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[1]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[2]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[3]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[4]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[5]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[6]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[7]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUXProxPC|saida_MUX[8]" is permanently enabled File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 22
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 12
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 17
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 17
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 17
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 17
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 17
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 17
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 17
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 18
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 18
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 18
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 18
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 18
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 18
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 18
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 12
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 17
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 17
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 17
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 17
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 17
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 17
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 17
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 18
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 18
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 18
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 18
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 18
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 18
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 18
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 256 registers lost all their fanouts during netlist optimizations.
+Info (17049): 266 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 11 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 20
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/brnoschsaloli/Documents/descomp/Projeto1/Contador/contador.vhd Line: 11
-Info (21057): Implemented 229 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 11
+Info (21057): Implemented 172 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 161 logic cells
+    Info (21061): Implemented 104 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 56 warnings
-    Info: Peak virtual memory: 555 megabytes
-    Info: Processing ended: Wed Oct 16 15:10:13 2024
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 551 megabytes
+    Info: Processing ended: Wed Oct 16 20:13:59 2024
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:12
 
 

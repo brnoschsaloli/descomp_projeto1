@@ -6,11 +6,11 @@ use IEEE.NUMERIC_STD.ALL;
 -- Entidade do componente bancoRegistradores
 entity bancoRegistradores is
     Port (
-        clk            : in  std_logic;                       -- Clock
-        sel            : in  std_logic_vector(2 downto 0);    -- Seletor (3 bits para 8 registradores)
-        data_in        : in  std_logic_vector(7 downto 0);    -- Dado de entrada (8 bits)
-        habRegistrador : in  std_logic;                       -- Habilita a escrita no registrador
-        data_out       : out std_logic_vector(7 downto 0)     -- Saída do registrador selecionado
+        clk            : in  std_logic;                    
+        sel            : in  std_logic_vector(1 downto 0); 
+        data_in        : in  std_logic_vector(7 downto 0); 
+        habReg         : in  std_logic;                       
+        data_out       : out std_logic_vector(7 downto 0)     
     );
 end entity;
 
@@ -18,22 +18,48 @@ end entity;
 architecture Behavioral of bancoRegistradores is
 
     -- Declaração de um array de registradores
-    type reg_array is array (0 to 7) of std_logic_vector(7 downto 0);
-    signal regs : reg_array := (others => (others => '0'));
+    signal saida_decoder_hab : std_logic_vector(3 downto 0);
+	 signal entrada_reg0 : std_logic_vector(3 downto 0);
+	 signal entrada_reg1 : std_logic_vector(3 downto 0);
+	 signal entrada_reg2 : std_logic_vector(3 downto 0);
+	 signal entrada_reg3 : std_logic_vector(3 downto 0);
+	 signal saida_reg0 : std_logic_vector(3 downto 0);
+	 signal saida_reg1 : std_logic_vector(3 downto 0);
+	 signal saida_reg2 : std_logic_vector(3 downto 0);
+	 signal saida_reg3 : std_logic_vector(3 downto 0);
 
 begin
 
-    -- Processo que escreve o dado de entrada no registrador selecionado na borda de subida do clock
-    process(clk)
-    begin
-        if rising_edge(clk) then
-            if habRegistrador = '1' then
-                regs(to_integer(unsigned(sel))) <= data_in;
-            end if;
-        end if;
-    end process;
+	REG1 : entity work.registradorGenerico   generic map (larguraDados => 8)
+          port map (DIN => data_in, DOUT => data_out, ENABLE => saida_decoder_hab(0), CLK => CLK, RST => '0');
 
-    -- Atribuição da saída com o valor do registrador selecionado
-    data_out <= regs(to_integer(unsigned(sel)));
+	REG2 : entity work.registradorGenerico   generic map (larguraDados => 8)
+          port map (DIN => data_in, DOUT => data_out, ENABLE => saida_decoder_hab(1), CLK => CLK, RST => '0');
 
+	REG3 : entity work.registradorGenerico   generic map (larguraDados => 8)
+          port map (DIN => data_in, DOUT => data_out, ENABLE => saida_decoder_hab(2), CLK => CLK, RST => '0');
+			 
+	REG4 : entity work.registradorGenerico   generic map (larguraDados => 8)
+          port map (DIN => data_in, DOUT => data_out, ENABLE => saida_decoder_hab(3), CLK => CLK, RST => '0');
+			 
+			 
+	DECHAB :  entity work.decoder2x4
+			  port map(entrada => sel, hab => habReg,
+						  saida => saida_decoder_hab);
+						  
+	MUXSAIDA :  entity work.muxGenerico4x1  generic map (larguraEntrada => 8)
+        port map( entrada_0 => saida_reg0,
+                  entrada_1 => saida_reg1,
+					   entrada_2 => saida_reg2,
+						entrada_3 => saida_reg3,
+                  seletor_MUX => sel,
+                  saida_MUX => data_out);
+
+	DMUXENTRADA:  entity work.demuxGenerico1x4  generic map (larguraEntrada => 8)
+        port map( entrada => data_in,
+                  saida_0 => entrada_reg0,
+					   saida_1 => entrada_reg1,
+						saida_2 => entrada_reg2,
+                  saida_3 => entrada_reg3,
+                  seletor_demux => sel);
 end Behavioral;

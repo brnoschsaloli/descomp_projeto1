@@ -13,7 +13,7 @@ entity CPU is
 	 RD: out std_logic;
 	 WR: out std_logic;
 	 ROM_Address: out std_logic_vector(8 downto 0);
-	 Instruction_IN: in std_logic_vector(13 downto 0);
+	 Instruction_IN: in std_logic_vector(12 downto 0);
 	 Data_Address: out std_logic_vector(8 downto 0);
 	 Data_OUT: out std_logic_vector(7 downto 0);
 	 Data_IN: in std_logic_vector(7 downto 0)
@@ -26,12 +26,10 @@ architecture arquitetura of CPU is
   signal Saida_MUX : std_logic_vector (larguraDados-6 downto 0);
   signal Saida_MUX_PC : std_logic_vector (larguraDados-5 downto 0);
   signal Saida_REG_A : std_logic_vector (larguraDados-6 downto 0);
-  signal Entrada_Flag_Equal : std_logic;
-  signal Saida_Flag_Equal : std_logic;
-  signal Entrada_Flag_Less : std_logic;
-  signal Saida_Flag_Less : std_logic;
+  signal Entrada_Flag : std_logic;
+  signal Saida_Flag : std_logic;
   signal Saida_ULA : std_logic_vector (larguraDados-6 downto 0);
-  signal Saida_Decoder : std_logic_vector (13 downto 0);
+  signal Saida_Decoder : std_logic_vector (11 downto 0);
   signal Saida_PC : std_logic_vector (8 downto 0);
   signal Saida_REG_RETORNO : std_logic_vector (8 downto 0);
   signal proxPC : std_logic_vector (8 downto 0);
@@ -40,14 +38,12 @@ architecture arquitetura of CPU is
   signal JMP : std_logic;
   signal SelMUXPC : std_logic_vector (1 downto 0);
   signal JEQ : std_logic;
-  signal JLT : std_logic;
   signal RET : std_logic;
   signal JSR : std_logic;
   signal Habilita_A : std_logic;
   signal habLeituraMEM : std_logic;
   signal habEscritaMEM : std_logic;
   signal habFlagIgual : std_logic;
-  signal habFlagLess : std_logic;
   signal habEscritaRetorno : std_logic;
 
 begin
@@ -78,12 +74,8 @@ REGA : entity work.registradorGenerico   generic map (larguraDados => larguraDad
           port map (DIN => Saida_ULA, DOUT => Saida_REG_A, ENABLE => Habilita_A, CLK => CLK, RST => '0');
 
 FlagZero : entity work.FlipFlop   generic map (larguraDados => 1)											 
-          port map (DIN => Entrada_Flag_Equal, DOUT => Saida_Flag_Equal, ENABLE => habFlagIgual, CLK => CLK, RST => '0');
+          port map (DIN => Entrada_Flag, DOUT => Saida_Flag, ENABLE => habFlagIgual, CLK => CLK, RST => '0');
 
-FlagLess : entity work.FlipFlop   generic map (larguraDados => 1)											 
-          port map (DIN => Entrada_Flag_Less, DOUT => Saida_Flag_Less, ENABLE => habFlagLess, CLK => CLK, RST => '0');
-			 
-			 
 -- O port map completo do Program Counter.
 PC : entity work.registradorGenerico   generic map (larguraDados => larguraEnderecos)
           port map (DIN => Saida_MUX_PC, DOUT => Saida_PC, ENABLE => '1', CLK => CLK, RST => '0');
@@ -97,38 +89,34 @@ incrementaPC :  entity work.somaConstante  generic map (larguraDados => larguraE
 
 -- O port map completo da ULA:
 ULA1 : entity work.ULASomaSub  generic map(larguraDados => larguraDados - 5)
-          port map (entradaA => Saida_REG_A, entradaB => Saida_MUX, saida => Saida_ULA, seletor => Operacao_ULA, porta_nor => Entrada_Flag_Equal, porta_clt => Entrada_Flag_Less);		 		 
+          port map (entradaA => Saida_REG_A, entradaB => Saida_MUX, saida => Saida_ULA, seletor => Operacao_ULA, porta_nor => Entrada_Flag);		 		 
 			 
 -- O port map completo do decoderInstru.
 DEC_Instrucao :  entity work.decoderInstru 
         port map( 
-				opcode => Instruction_IN(13 downto 9),
+				opcode => Instruction_IN(12 downto 9),
             saida =>  Saida_Decoder
 			);
 			
 LogicaDesvio1 : entity work.LogicaDesvio
 			port map(
-				entrada_flag_equal => Saida_Flag_Equal,
+				entrada_flag => Saida_Flag,
 				entrada_jeq  => JEQ,
-				entrada_flag_less => Saida_Flag_Less,
-				entrada_jlt  => JLT,
 				entrada_jmp  => JMP,
 				entrada_jsr  => JSR,
 				entrada_ret  => RET,
 				saida        => SelMUXPC
 			);
 			
-habEscritaRetorno <= Saida_Decoder(13);
-JMP <= Saida_Decoder(12);
-RET <= Saida_Decoder(11);
-JSR <= Saida_Decoder(10);
-JEQ <= Saida_Decoder(9);
-JLT <= Saida_Decoder(8);
-SelMUX <= Saida_Decoder(7);
-Habilita_A <= Saida_Decoder(6);
-Operacao_ULA <= Saida_Decoder(5 downto 4);
-habFlagIgual <= Saida_Decoder(3);
-habFlagLess <= Saida_Decoder(2);
+habEscritaRetorno <= Saida_Decoder(11);
+JMP <= Saida_Decoder(10);
+RET <= Saida_Decoder(9);
+JSR <= Saida_Decoder(8);
+JEQ <= Saida_Decoder(7);
+SelMUX <= Saida_Decoder(6);
+Habilita_A <= Saida_Decoder(5);
+Operacao_ULA <= Saida_Decoder(4 downto 3);
+habFlagIgual <= Saida_Decoder(2);
 habLeituraMEM <= Saida_Decoder(1);
 habEscritaMEM <= Saida_Decoder(0);
 
