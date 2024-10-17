@@ -1,0 +1,22 @@
+JSR .label0	#Deve desviar para a posição 14
+JMP .label1	#Deve desviar para a posição 5
+label3:
+JEQ .label2	#Deve desviar para a posição 9
+label4:
+NOP
+NOP
+label1:
+LDI $5	#Carrega acumulador com valor 5
+STA $0	#Armazena 5 na posição 0 da memória
+CEQ @0	#A Comparação deve fazer o flagIgual ser 1
+JMP .label3	#Vai testar o flagIgual depois do jump
+label2: 
+NOP
+LDI $4	#Carrega acumulador com valor 4
+CEQ @0	#Compara com valor 5, deve fazer o flagIgual ser 0
+JEQ .label4	#Não deve ocorrer o desvio
+label5:
+JMP .label5	#Fim. Deve ficar neste laço
+label0:
+NOP
+RET #Retorna para a posição 1
