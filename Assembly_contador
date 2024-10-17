@@ -1,0 +1,74 @@
+LDI $0		#Carrega o acumulador com o valor 0
+STA @288	#Armazena o valor do acumulador em HEX0
+STA @289	#Armazena o valor do acumulador em HEX1
+STA @290	#Armazena o valor do acumulador em HEX2
+STA @291	#Armazena o valor do acumulador em HEX3
+STA @292	#Armazena o valor do acumulador em HEX4
+STA @293	#Armazena o valor do acumulador em HEX5
+NOP
+LDI $0		#Carrega o acumulador com o valor 0
+STA @256	#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
+STA @257	#Armazena o valor do bit0 do acumulador no LDR8
+STA @258	#Armazena o valor do bit0 do acumulador no LDR9
+NOP
+LDI $0		#Carrega o acumulador com o valor 0
+STA @0		#Armazena o valor do acumulador em MEM[0] (unidades)
+STA @1		#Armazena o valor do acumulador em MEM[1] (dezenas)
+STA @2		#Armazena o valor do acumulador em MEM[2] (centenas)
+NOP
+LDI $0		#Carrega o acumulador com o valor 0
+STA @3		#Armazena o valor do acumulador em MEM[3] (constante 0)
+LDI $1		#Carrega o acumulador com o valor 1
+STA @4		#Armazena o valor do acumulador em MEM[4] (constante 1)
+LDI $10		#Carrega o acumulador com o valor 10
+STA @5		#Armazena o valor do acumulador em MEM[5] (constante 10)
+NOP
+STA @511	#Limpa a leitura do botão zero
+STA @510	#Limpa a leitura do botão um
+INICIO:
+NOP
+LDA @352	#Carrega o acumulador com a leitura do botão KEY0
+AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQ @3		#Compara com o valor de MEM[3] (constante 0)
+JEQ .LE_RESET	#Desvia se igual a 0 (botão não foi pressionado)
+JSR .INCREMENTO	#O botão foi pressionado, chama a sub-rotina de incremento
+LE_RESET:
+JSR .SALVA_DISP #Escreve o valor das váriaveis de contagem nos displays
+LDA @356	#Carrega o acumulador com a leitura do botão FPGA_RESET
+AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQ @4		#Compara com o valor de MEM[4] (constante 1)
+JEQ .REINICIO	#Desvia se igual a 0 (botão não foi pressionado)
+JSR .RESET	#O botão foi pressionado, chama a sub-rotina de reset
+REINICIO:
+NOP		#Retorno da sub-rotina de incremento
+JMP .INICIO	#Fecha o laço principal, faz uma nova leitura de KEY0
+NOP
+INCREMENTO:
+STA @511	#Limpa a leitura do botão
+LDA @0		#Carrega o valor de MEM[0] (contador)
+SOMA @4		#Soma com a constante em MEM[4] (constante 1)
+CEQ @5		#Compara o valor com constante em MEM[5] (constante 10)
+JEQ .VAIUM	#Realiza o carry out caso valor igual a 10
+STA @0		#Salva o incremento em MEM[0] (contador)
+RET		#Retorna da sub-rotina
+VAIUM:
+LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
+STA @0		#Armazena o valor do acumulador em MEM[0] (unidades)
+LDA @1		#Carrega valor de MEM[1] no acumulador (dezenas)
+SOMA @4		#Soma com a constante em MEM[4] (constante 1)
+STA @1		#Salva o incremento em MEM[1] (dezenas)
+RET
+SALVA_DISP:
+LDA @0 		#Carrega o valor de MEM[0] (unidades)
+STA @288 	#Armazena valor do acumulador de unidades no HEX0
+LDA @1 		#Carrega o valor de MEM[1] (dezenas)
+STA @289 	#Armazena valor do acumulador de dezenas no HEX1
+LDA @2 		#Carrega o valor de MEM[2] (centenas)
+STA @290 	#Armazena valor do acumulador de centenas no HEX2
+RET
+RESET:
+LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
+STA @0	 	#Armazena o valor do acumulador na MEM[0] (unidades)
+STA @1	 	#Armazena o valor do acumulador na MEM[1] (dezenas)
+STA @2	 	#Armazena o valor do acumulador na MEM[2] (centenas)
+RET
