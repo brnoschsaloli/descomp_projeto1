@@ -38,8 +38,8 @@ STA @510	#Limpa a leitura do botão um
 INICIO:
 NOP		
 LDA @352	#Carrega o acumulador com a leitura do botão KEY0
-AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
-CEQ @3		#Compara com o valor de MEM[3] (constante 0)
+ANDi $1		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQi $0		#Compara com constante 0
 JEQ .NAO_CLICOU0	#Desvia se igual a 0 (botão não foi pressionado)
 JSR .INCREMENTO	#O botão foi pressionado, chama a sub-rotina de incremento
 NOP 		#Retorno da sub-rotina de incremento
@@ -47,8 +47,8 @@ NAO_CLICOU0:
 JSR .SALVA_DISP #Escreve o valor das váriaveis de contagem nos displays
 NOP		#Retorno da sub-rotina de salvar nos displays
 LDA @353	#Carrega o acumulador com a leitura do botão KEY1
-AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
-CEQ @3		#Compara com o valor de MEM[3] (constante 0)
+ANDi $1		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQi $0		#Compara com constante 0
 JEQ .NAO_CLICOU1	#Desvia se igual a 0 (botão não foi pressionado)
 JSR .DEFINE_LIM	#O botão foi pressionado, chama a sub-rotina de incremento
 NOP 		#Retorno da sub-rotina de definir limite
@@ -56,8 +56,8 @@ NAO_CLICOU1:
 JSR .VERIFICA_LIM
 NOP		#Retorno da sub-rotina de verificar limite
 LDA @356	#Carrega o acumulador com a leitura do botão FPGA_RESET
-AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
-CEQ @4		#Compara com o valor de MEM[4] (constante 1)
+ANDi $1		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQi $1		#Compara com constante 1
 JEQ .REINICIO	#Desvia se igual a 1 (botão não foi pressionado)
 JSR .RESET	#O botão foi pressionado, chama a sub-rotina de reset
 REINICIO:
@@ -67,13 +67,13 @@ NOP
 INCREMENTO:
 STA @511	#Limpa a leitura do botão
 LDA @9		#Carrega o valor de MEM[9] (flag inibir contagem)
-CEQ @3		#Compara o valor com constante em MEM[3] (constante 0)
+CEQi $0		#Compara o valor com constante 0
 JEQ .INCREMENTAR
 RET
 INCREMENTAR:
 LDA @0		#Carrega o valor de MEM[0] (contador)
-SOMA @4		#Soma com a constante em MEM[4] (constante 1)
-CEQ @5		#Compara o valor com constante em MEM[5] (constante 10)
+ADDi $1		#ADDi com a constante 1
+CEQi $10		#Compara o valor com constante 10
 JEQ .VAIUM_D	#Realiza o carry out caso valor igual a 10
 STA @0		#Salva o incremento em MEM[0] (contador)
 RET		#Retorna da sub-rotina
@@ -81,8 +81,8 @@ VAIUM_D:
 LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
 STA @0		#Armazena o valor do acumulador em MEM[0] (unidades)
 LDA @1		#Carrega valor de MEM[1] no acumulador (dezenas)
-SOMA @4		#Soma com a constante em MEM[4] (constante 1)
-CEQ @5		#Compara o valor com constante em MEM[5] (constante 10)
+ADDi $1		#ADDi com a constante 1
+CEQi $10		#Compara o valor com constante 10
 JEQ .VAIUM_C	#Realiza o carry out caso valor igual a 10
 STA @1		#Salva o incremento em MEM[1] (dezenas)
 RET
@@ -90,8 +90,8 @@ VAIUM_C:
 LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
 STA @1		#Armazena o valor do acumulador em MEM[1] (dezenas)
 LDA @2		#Carrega valor de MEM[2] no acumulador (centenas)
-SOMA @4		#Soma com a constante em MEM[4] (constante 1)
-CEQ @5		#Compara o valor com constante em MEM[5] (constante 10)
+ADDi $1		#ADDi com a constante 1
+CEQi $10		#Compara o valor com constante 10
 JEQ .VAIUM_M	#Realiza o carry out caso valor igual a 10
 STA @2		#Salva o incremento em MEM[2] (centenas)
 RET
@@ -99,8 +99,8 @@ VAIUM_M:
 LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
 STA @2		#Armazena o valor do acumulador em MEM[2] (centenas)
 LDA @6		#Carrega valor de MEM[6] no acumulador (milhares)
-SOMA @4		#Soma com a constante em MEM[4] (constante 1)
-CEQ @5		#Compara o valor com constante em MEM[5] (constante 10)
+ADDi $1		#ADDi com a constante 1
+CEQi $10		#Compara o valor com constante 10
 JEQ .VAIUM_DM	#Realiza o carry out caso valor igual a 10
 STA @6		#Salva o incremento em MEM[6] (milhares)
 RET
@@ -108,8 +108,8 @@ VAIUM_DM:
 LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
 STA @6		#Armazena o valor do acumulador em MEM[6] (milhares)
 LDA @7		#Carrega valor de MEM[7] no acumulador (dezenas de milhares)
-SOMA @4		#Soma com a constante em MEM[4] (constante 1)
-CEQ @5		#Compara o valor com constante em MEM[5] (constante 10)
+ADDi $1		#ADDi com a constante 1
+CEQi $10		#Compara o valor com constante 10
 JEQ .VAIUM_CM	#Realiza o carry out caso valor igual a 10
 STA @7		#Salva o incremento em MEM[7] (dezenas de milhares)
 RET
@@ -117,7 +117,7 @@ VAIUM_CM:
 LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
 STA @7		#Armazena o valor do acumulador em MEM[6] (milhares)
 LDA @8		#Carrega valor de MEM[7] no acumulador (dezenas de milhares)
-SOMA @4		#Soma com a constante em MEM[4] (constante 1)
+ADDi $1		#ADDi com a constante 1
 STA @7		#Salva o incremento em MEM[7] (dezenas de milhares)
 RET
 SALVA_DISP:
@@ -188,8 +188,8 @@ LDI $4		#Carrega o acumulador com o valor 4
 STA @256	#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
 AGUARDA_D:
 LDA @353	#Carrega o acumulador com a leitura do botão KEY1
-AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
-CEQ @3		#Compara com o valor de MEM[3] (constante 0)
+ANDi $1		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQi $0		#Compara com constante 0
 JEQ .AGUARDA_D	#Desvia se igual a 0 (botão não foi pressionado)
 STA @510	#Limpa a leitura do botão um
 LDA @320	#Carrega o acumulador com a leitura do SW7TO0
@@ -198,8 +198,8 @@ LDI $16		#Carrega o acumulador com o valor 16
 STA @256	#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
 AGUARDA_C:
 LDA @353	#Carrega o acumulador com a leitura do botão KEY1
-AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
-CEQ @3		#Compara com o valor de MEM[3] (constante 0)
+ANDi $1		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQi $0		#Compara com constante 0
 JEQ .AGUARDA_C	#Desvia se igual a 0 (botão não foi pressionado)
 STA @510	#Limpa a leitura do botão um
 LDA @320	#Carrega o acumulador com a leitura do SW7TO0
@@ -208,8 +208,8 @@ LDI $32		#Carrega o acumulador com o valor 32
 STA @256	#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
 AGUARDA_M:
 LDA @353	#Carrega o acumulador com a leitura do botão KEY1
-AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
-CEQ @3		#Compara com o valor de MEM[3] (constante 0)
+ANDi $1		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQi $0		#Compara com constante 0
 JEQ .AGUARDA_M	#Desvia se igual a 0 (botão não foi pressionado)
 STA @510	#Limpa a leitura do botão um
 LDA @320	#Carrega o acumulador com a leitura do SW7TO0
@@ -218,8 +218,8 @@ LDI $128	#Carrega o acumulador com o valor 128
 STA @256	#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
 AGUARDA_DM:
 LDA @353	#Carrega o acumulador com a leitura do botão KEY1
-AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
-CEQ @3		#Compara com o valor de MEM[3] (constante 0)
+ANDi $1		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQi $0		#Compara com constante 0
 JEQ .AGUARDA_DM	#Desvia se igual a 0 (botão não foi pressionado)
 STA @510	#Limpa a leitura do botão um
 LDA @320	#Carrega o acumulador com a leitura do SW7TO0
@@ -230,8 +230,8 @@ LDI $1		#Carrega o acumulador com o valor 1
 STA @258	#Armazena o valor do bit0 do acumulador no LDR9
 AGUARDA_CM:
 LDA @353	#Carrega o acumulador com a leitura do botão KEY1
-AND @4		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
-CEQ @3		#Compara com o valor de MEM[3] (constante 0)
+ANDi $1		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
+CEQi $0		#Compara com constante 0
 JEQ .AGUARDA_CM	#Desvia se igual a 0 (botão não foi pressionado)
 STA @510	#Limpa a leitura do botão um
 LDA @320	#Carrega o acumulador com a leitura do SW7TO0
