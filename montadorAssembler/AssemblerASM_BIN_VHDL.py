@@ -80,19 +80,20 @@ noveBits = True
 
 #definição dos mnemônicos e seus
 #respectivo OPCODEs (em Hexadecimal)
-mne =	{ 
-       "NOP":   "0",
-       "LDA":   "1",
-       "SOMA":  "2",
-       "SUB":   "3",
-       "LDI":   "4",
-       "STA":   "5",
-       "JMP":   "6",
-       "JEQ":   "7",
-       "CEQ":   "8",
-       "JSR":   "9",
-       "RET":   "A",
-}
+mne = { 
+        "NOP":  "0",
+        "LDA":  "1",
+        "SOMA": "2",
+        "SUB":  "3",
+        "LDI":  "4",
+        "STA":  "5",
+        "JMP":  "6",
+        "JEQ":  "7",
+        "CEQ":  "8",
+        "JSR":  "9",
+        "RET":  "A",
+        "AND":  "B"
+    }
 
 #Converte o valor após o caractere arroba '@'
 #em um valor hexadecimal de 2 dígitos (8 bits)
@@ -182,15 +183,19 @@ def identificarLabels(lines):
 
     return labels
 
-# Passo 2: Substituir as referências de labels por endereços
 def substituirLabels(lines, labels):
     novaLista = []
     for line in lines:
-        if not line.strip().endswith(':'):  # Ignorar linhas que são labels
+        line_original = line.strip()  # Mantém a linha original para debug
+
+        # Ignorar linhas que são labels (aquelas que contêm ":")
+        if ':' not in line_original:  
             for label in labels:
-                if f".{label}" in line:
+                # Checa a presença de ".label" na linha como uma palavra isolada
+                if f".{label}" in line.split():
                     line = line.replace(f".{label}", f"@{labels[label]}")
             novaLista.append(line)
+        
     return novaLista
 
 with open(inputASM, "r") as f: #Abre o arquivo ASM
