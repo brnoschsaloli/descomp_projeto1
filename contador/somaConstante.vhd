@@ -1,3 +1,4 @@
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;  --Soma (esta biblioteca =ieee)
@@ -6,7 +7,7 @@ entity somaConstante is
     generic
     (
         larguraDados : natural := 32;
-        constante : natural := 4
+        constante : natural := 1
     );
     port
     (

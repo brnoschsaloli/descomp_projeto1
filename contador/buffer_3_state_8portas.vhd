@@ -5,7 +5,8 @@ entity buffer_3_state_8portas is
     port(
         entrada  : in std_logic_vector(7 downto 0);
         habilita : in std_logic;
-        saida    : out std_logic_vector(7 downto 0));
+        saida    : out std_logic_vector(7 downto 0)
+		  );
 end entity;
 
 architecture comportamento of buffer_3_state_8portas is

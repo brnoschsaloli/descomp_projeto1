@@ -1,27 +1,21 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+library ieee;
+use ieee.std_logic_1164.all;
 
 entity muxGenerico4x1 is
-  generic ( larguraEntrada : natural := 9;
-        larguraSelecao : natural := 2;
-        invertido : boolean := FALSE);
+  -- Total de bits das entradas e saidas
+  generic ( larguraDados : natural := 8
+  );
   port (
-    entrada_0 : in  std_logic_vector(larguraEntrada-1 downto 0);
-    entrada_1 : in  std_logic_vector(larguraEntrada-1 downto 0);
-    entrada_2 : in  std_logic_vector(larguraEntrada-1 downto 0);
-    entrada_3 : in  std_logic_vector(larguraEntrada-1 downto 0);
-    seletor_MUX : in  std_logic_vector(larguraSelecao-1 downto 0);
-    saida_MUX   : out std_logic_vector(larguraEntrada-1 downto 0)
+    entrada0_MUX, entrada1_MUX, entrada2_MUX, entrada3_MUX : in std_logic_vector((larguraDados-1) downto 0);
+    seletor_MUX : in std_logic_vector(1 downto 0);
+    saida_MUX : out std_logic_vector((larguraDados-1) downto 0)
   );
 end entity;
 
-architecture Behavioral of muxGenerico4x1 is
-begin
-
-    saida_MUX <= entrada_0 when (seletor_MUX = "00") else 
-					  entrada_1 when (seletor_MUX = "01") else 
-					  entrada_2 when (seletor_MUX = "10");
-
-
+architecture comportamento of muxGenerico4x1 is
+  begin
+    saida_MUX <= entrada0_MUX when (seletor_MUX = "00") else
+					  entrada1_MUX when (seletor_MUX = "01") else
+					  entrada2_MUX when (seletor_MUX = "10") else entrada3_MUX;
+	 
 end architecture;
