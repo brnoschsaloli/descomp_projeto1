@@ -1,5 +1,5 @@
 Analysis & Synthesis report for contador
-Sat Oct 19 16:48:50 2024
+Mon Oct 21 15:37:03 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -84,7 +84,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Oct 19 16:48:50 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct 21 15:37:03 2024       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; contador                                    ;
 ; Top-level Entity Name           ; contador                                    ;
@@ -197,15 +197,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
@@ -213,37 +213,33 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 7            ;   0.0%      ;
 ;     Processor 8            ;   0.0%      ;
 ;     Processor 9            ;   0.0%      ;
-;     Processor 10           ;   0.0%      ;
-;     Processor 11           ;   0.0%      ;
-;     Processor 12           ;   0.0%      ;
-;     Processor 13           ;   0.0%      ;
-;     Processors 14-16       ;   0.0%      ;
+;     Processors 10-14       ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                        ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                 ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
-; buffer_3_state_1porta.vhd        ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/buffer_3_state_1porta.vhd  ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/registradorGenerico.vhd    ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/decoderInstru.vhd          ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd         ;         ;
-; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/edgeDetector.vhd           ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico4x1.vhd         ;         ;
-; logicaDeDesvio.vhd               ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/logicaDeDesvio.vhd         ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/memoriaRAM.vhd             ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/conversorHex7Seg.vhd       ;         ;
-; memoriaR0M.vhd                   ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/memoriaR0M.vhd             ;         ;
-; decoder3X8.vhd                   ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/decoder3X8.vhd             ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd                    ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/somaConstante.vhd          ;         ;
-; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/flipFlop.vhd               ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/ULASomaSub.vhd             ;         ;
-; contador.vhd                     ; yes             ; User VHDL File  ; /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd               ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; buffer_3_state_1porta.vhd        ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_1porta.vhd  ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/registradorGenerico.vhd    ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoderInstru.vhd          ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd         ;         ;
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd           ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd         ;         ;
+; logicaDeDesvio.vhd               ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/logicaDeDesvio.vhd         ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd             ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/conversorHex7Seg.vhd       ;         ;
+; memoriaR0M.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaR0M.vhd             ;         ;
+; decoder3X8.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder3X8.vhd             ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd                    ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/somaConstante.vhd          ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/flipFlop.vhd               ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/ULASomaSub.vhd             ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd               ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -251,14 +247,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 485            ;
+; Estimate of Logic utilization (ALMs needed) ; 494            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 512            ;
-;     -- 7 input functions                    ; 3              ;
-;     -- 6 input functions                    ; 318            ;
-;     -- 5 input functions                    ; 41             ;
-;     -- 4 input functions                    ; 52             ;
-;     -- <=3 input functions                  ; 98             ;
+; Combinational ALUT usage for logic          ; 533            ;
+;     -- 7 input functions                    ; 1              ;
+;     -- 6 input functions                    ; 334            ;
+;     -- 5 input functions                    ; 49             ;
+;     -- 4 input functions                    ; 54             ;
+;     -- <=3 input functions                  ; 95             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 577            ;
 ;                                             ;                ;
@@ -268,8 +264,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 575            ;
-; Total fan-out                               ; 4397           ;
-; Average fan-out                             ; 3.59           ;
+; Total fan-out                               ; 4523           ;
+; Average fan-out                             ; 3.63           ;
 +---------------------------------------------+----------------+
 
 
@@ -278,12 +274,12 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Entity Name         ; Library Name ;
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------+---------------------+--------------+
-; |contador                               ; 512 (25)            ; 577 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |contador                                           ; contador            ; work         ;
-;    |CPU:U_CPU|                          ; 67 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU                                 ; CPU                 ; work         ;
-;       |ULASomaSub:ULA1|                 ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|ULASomaSub:ULA1                 ; ULASomaSub          ; work         ;
-;       |decoderInstru:decoderI|          ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|decoderInstru:decoderI          ; decoderInstru       ; work         ;
-;       |flipFlop:FLAG|                   ; 4 (4)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|flipFlop:FLAG                   ; flipFlop            ; work         ;
-;       |muxGenerico2x1:MUX_ULA|          ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|muxGenerico2x1:MUX_ULA          ; muxGenerico2x1      ; work         ;
+; |contador                               ; 533 (25)            ; 577 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |contador                                           ; contador            ; work         ;
+;    |CPU:U_CPU|                          ; 86 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU                                 ; CPU                 ; work         ;
+;       |ULASomaSub:ULA1|                 ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|ULASomaSub:ULA1                 ; ULASomaSub          ; work         ;
+;       |decoderInstru:decoderI|          ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|decoderInstru:decoderI          ; decoderInstru       ; work         ;
+;       |flipFlop:FLAG|                   ; 7 (7)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|flipFlop:FLAG                   ; flipFlop            ; work         ;
+;       |muxGenerico2x1:MUX_ULA|          ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|muxGenerico2x1:MUX_ULA          ; muxGenerico2x1      ; work         ;
 ;       |muxGenerico4x1:MUX_JMP|          ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|muxGenerico4x1:MUX_JMP          ; muxGenerico4x1      ; work         ;
 ;       |registradorGenerico:PC|          ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|registradorGenerico:PC          ; registradorGenerico ; work         ;
 ;       |registradorGenerico:REGA|        ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:U_CPU|registradorGenerico:REGA        ; registradorGenerico ; work         ;
@@ -302,8 +298,8 @@ https://fpgasoftware.intel.com/eula.
 ;    |flipFlop:FF_KEY1|                   ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_KEY1                          ; flipFlop            ; work         ;
 ;    |flipFlop:FF_LED8|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_LED8                          ; flipFlop            ; work         ;
 ;    |flipFlop:FF_LED9|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_LED9                          ; flipFlop            ; work         ;
-;    |memoriaRAM:RAM1|                    ; 297 (297)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM1                           ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                    ; 73 (73)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM1                           ; memoriaROM          ; work         ;
+;    |memoriaRAM:RAM1|                    ; 298 (298)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM1                           ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM1|                    ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM1                           ; memoriaROM          ; work         ;
 ;    |registradorGenerico:REG_HEX0|       ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:REG_HEX0              ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REG_HEX1|       ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:REG_HEX1              ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REG_HEX2|       ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:REG_HEX2              ; registradorGenerico ; work         ;
@@ -335,10 +331,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |contador|CPU:U_CPU|registradorGenerico:PC|DOUT[2]      ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |contador|CPU:U_CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |contador|CPU:U_CPU|ULASomaSub:ULA1|saida[1]            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |contador|CPU:U_CPU|decoderInstru:decoderI|saida[5]     ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |contador|CPU:U_CPU|registradorGenerico:PC|DOUT[3]      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |contador|CPU:U_CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |contador|CPU:U_CPU|ULASomaSub:ULA1|saida[3]            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |contador|CPU:U_CPU|decoderInstru:decoderI|saida[3]     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
@@ -757,24 +753,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 553                         ;
 ;     ENA SLD           ; 8                           ;
 ;     plain             ; 14                          ;
-; arriav_lcell_comb     ; 512                         ;
+; arriav_lcell_comb     ; 533                         ;
 ;     arith             ; 18                          ;
 ;         1 data inputs ; 9                           ;
 ;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 8                           ;
-;     extend            ; 3                           ;
-;         7 data inputs ; 3                           ;
-;     normal            ; 491                         ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 514                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 84                          ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 51                          ;
-;         5 data inputs ; 33                          ;
-;         6 data inputs ; 318                         ;
+;         2 data inputs ; 79                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 53                          ;
+;         5 data inputs ; 41                          ;
+;         6 data inputs ; 334                         ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.30                       ;
-; Average LUT depth     ; 6.62                        ;
+; Max LUT depth         ; 10.50                       ;
+; Average LUT depth     ; 7.10                        ;
 +-----------------------+-----------------------------+
 
 
@@ -793,103 +789,103 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Oct 19 16:48:43 2024
+    Info: Processing started: Mon Oct 21 15:36:57 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off contador -c contador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_1porta.vhd
-    Info (12022): Found design unit 1: buffer_3_state_1porta-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/buffer_3_state_1porta.vhd Line: 12
-    Info (12023): Found entity 1: buffer_3_state_1porta File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/buffer_3_state_1porta.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state_1porta-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_1porta.vhd Line: 12
+    Info (12023): Found entity 1: buffer_3_state_1porta File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_1porta.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/registradorGenerico.vhd Line: 16
-    Info (12023): Found entity 1: registradorGenerico File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/registradorGenerico.vhd Line: 5
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/registradorGenerico.vhd Line: 16
+    Info (12023): Found entity 1: registradorGenerico File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/registradorGenerico.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file decoderInstru.vhd
-    Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/decoderInstru.vhd Line: 10
-    Info (12023): Found entity 1: decoderInstru File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/decoderInstru.vhd Line: 4
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoderInstru.vhd Line: 10
+    Info (12023): Found entity 1: decoderInstru File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoderInstru.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
-    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd Line: 12
-    Info (12023): Found entity 1: buffer_3_state_8portas File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd Line: 12
+    Info (12023): Found entity 1: buffer_3_state_8portas File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd Line: 4
 Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 15
-    Info (12023): Found entity 1: muxGenerico4x1 File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico4x1 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file logicaDeDesvio.vhd
-    Info (12022): Found design unit 1: logicaDeDesvio-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/logicaDeDesvio.vhd Line: 14
-    Info (12023): Found entity 1: logicaDeDesvio File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/logicaDeDesvio.vhd Line: 4
+    Info (12022): Found design unit 1: logicaDeDesvio-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/logicaDeDesvio.vhd Line: 14
+    Info (12023): Found entity 1: logicaDeDesvio File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/logicaDeDesvio.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 22
-    Info (12023): Found entity 1: memoriaRAM File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 6
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 22
+    Info (12023): Found entity 1: memoriaRAM File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/conversorHex7Seg.vhd Line: 4
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/conversorHex7Seg.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaR0M.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/memoriaR0M.vhd Line: 16
-    Info (12023): Found entity 1: memoriaROM File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/memoriaR0M.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaR0M.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaR0M.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3X8.vhd
-    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/decoder3X8.vhd Line: 11
-    Info (12023): Found entity 1: decoder3x8 File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/decoder3X8.vhd Line: 5
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder3X8.vhd Line: 11
+    Info (12023): Found entity 1: decoder3x8 File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder3X8.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
-    Info (12022): Found design unit 1: CPU-arquitetura File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 27
-    Info (12023): Found entity 1: CPU File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 4
+    Info (12022): Found design unit 1: CPU-arquitetura File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 27
+    Info (12023): Found entity 1: CPU File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file somaConstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/somaConstante.vhd Line: 19
-    Info (12023): Found entity 1: somaConstante File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/somaConstante.vhd Line: 6
+    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/somaConstante.vhd Line: 19
+    Info (12023): Found entity 1: somaConstante File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/somaConstante.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file flipFlop.vhd
-    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/flipFlop.vhd Line: 13
-    Info (12023): Found entity 1: flipFlop File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/flipFlop.vhd Line: 4
+    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/flipFlop.vhd Line: 13
+    Info (12023): Found entity 1: flipFlop File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/flipFlop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/ULASomaSub.vhd Line: 15
-    Info (12023): Found entity 1: ULASomaSub File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/ULASomaSub.vhd Line: 5
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/ULASomaSub.vhd Line: 15
+    Info (12023): Found entity 1: ULASomaSub File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/ULASomaSub.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-arquitetura File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 30
-    Info (12023): Found entity 1: contador File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 4
+    Info (12022): Found design unit 1: contador-arquitetura File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 30
+    Info (12023): Found entity 1: contador File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 4
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:U_CPU" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 85
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:U_CPU|muxGenerico2x1:MUX_ULA" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 52
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:U_CPU|muxGenerico4x1:MUX_JMP" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 58
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:U_CPU|registradorGenerico:REGA" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 67
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:U_CPU|registradorGenerico:REG_RETORNO" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 70
-Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:U_CPU|flipFlop:FLAG" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 73
-Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:U_CPU|somaConstante:incrementaPC" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 80
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:U_CPU|ULASomaSub:ULA1" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 85
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:U_CPU|decoderInstru:decoderI" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 88
-Info (12128): Elaborating entity "logicaDeDesvio" for hierarchy "CPU:U_CPU|logicaDeDesvio:desvio_inst" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/CPU.vhd Line: 94
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 99
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 102
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlocos" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 105
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_HEX0" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 122
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DEC_HEX0" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 140
-Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:SW7TO0_TRI" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 182
-Info (12128): Elaborating entity "buffer_3_state_1porta" for hierarchy "buffer_3_state_1porta:SW8_TRI" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 185
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:DETECTORKEY0" File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/contador.vhd Line: 206
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:U_CPU" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 85
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:U_CPU|muxGenerico2x1:MUX_ULA" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 52
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:U_CPU|muxGenerico4x1:MUX_JMP" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 58
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:U_CPU|registradorGenerico:REGA" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 67
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:U_CPU|registradorGenerico:REG_RETORNO" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 70
+Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:U_CPU|flipFlop:FLAG" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 73
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:U_CPU|somaConstante:incrementaPC" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 80
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:U_CPU|ULASomaSub:ULA1" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 85
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:U_CPU|decoderInstru:decoderI" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 88
+Info (12128): Elaborating entity "logicaDeDesvio" for hierarchy "CPU:U_CPU|logicaDeDesvio:desvio_inst" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd Line: 94
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 99
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 102
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlocos" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 105
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_HEX0" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 122
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DEC_HEX0" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 140
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:SW7TO0_TRI" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 182
+Info (12128): Elaborating entity "buffer_3_state_1porta" for hierarchy "buffer_3_state_1porta:SW8_TRI" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 185
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:DETECTORKEY0" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd Line: 206
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 28
+    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "DATA_IN[7]" into a selector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "DATA_IN[6]" into a selector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "DATA_IN[5]" into a selector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "DATA_IN[4]" into a selector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "DATA_IN[3]" into a selector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "DATA_IN[2]" into a selector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "DATA_IN[1]" into a selector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "DATA_IN[0]" into a selector File: /home/thiagotv1/Insper/Descomp/Projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "DATA_IN[7]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "DATA_IN[6]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "DATA_IN[5]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "DATA_IN[4]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "DATA_IN[3]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "DATA_IN[2]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "DATA_IN[1]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "DATA_IN[0]" into a selector File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd Line: 10
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1143 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1164 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1075 logic cells
+    Info (21061): Implemented 1096 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 562 megabytes
-    Info: Processing ended: Sat Oct 19 16:48:50 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 580 megabytes
+    Info: Processing ended: Mon Oct 21 15:37:03 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
 
 
