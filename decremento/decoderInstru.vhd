@@ -24,6 +24,8 @@ architecture comportamento of decoderInstru is
   constant ANDi  : std_logic_vector(3 downto 0) := "1100";
   constant CEQi  : std_logic_vector(3 downto 0) := "1101";
   constant ADDi  : std_logic_vector(3 downto 0) := "1110";
+  constant SUBi  : std_logic_vector(3 downto 0) := "1111";
+  
 	 
   begin
 saida <= "000000000000" when opcode = NOP  else
@@ -41,5 +43,6 @@ saida <= "000000000000" when opcode = NOP  else
 			"000001111010" when opcode = ANDi else
 			"000001000110" when opcode = CEQi else
 			"000001101010" when opcode = ADDi else
+			"000001100010" when opcode = SUBi else
          "000000000000";  -- NOP para os opcodes Indefinidos
 end architecture;

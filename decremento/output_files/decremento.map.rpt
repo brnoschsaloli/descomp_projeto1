@@ -1,5 +1,5 @@
 Analysis & Synthesis report for decremento
-Mon Oct 21 15:55:08 2024
+Mon Oct 21 17:57:16 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -84,7 +84,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Oct 21 15:55:08 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct 21 17:57:16 2024       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; decremento                                  ;
 ; Top-level Entity Name           ; decremento                                  ;
@@ -205,7 +205,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
@@ -213,7 +213,8 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 7            ;   0.0%      ;
 ;     Processor 8            ;   0.0%      ;
 ;     Processor 9            ;   0.0%      ;
-;     Processors 10-14       ;   0.0%      ;
+;     Processor 10           ;   0.0%      ;
+;     Processors 11-14       ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -247,14 +248,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 494            ;
+; Estimate of Logic utilization (ALMs needed) ; 477            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 533            ;
-;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 334            ;
-;     -- 5 input functions                    ; 49             ;
-;     -- 4 input functions                    ; 54             ;
-;     -- <=3 input functions                  ; 95             ;
+; Combinational ALUT usage for logic          ; 515            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 277            ;
+;     -- 5 input functions                    ; 56             ;
+;     -- 4 input functions                    ; 72             ;
+;     -- <=3 input functions                  ; 110            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 577            ;
 ;                                             ;                ;
@@ -264,8 +265,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 575            ;
-; Total fan-out                               ; 4523           ;
-; Average fan-out                             ; 3.63           ;
+; Total fan-out                               ; 4319           ;
+; Average fan-out                             ; 3.52           ;
 +---------------------------------------------+----------------+
 
 
@@ -274,10 +275,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name         ; Library Name ;
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+---------------------+--------------+
-; |decremento                             ; 533 (25)            ; 577 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |decremento                                           ; decremento          ; work         ;
-;    |CPU:U_CPU|                          ; 86 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |decremento|CPU:U_CPU                                 ; CPU                 ; work         ;
+; |decremento                             ; 515 (31)            ; 577 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |decremento                                           ; decremento          ; work         ;
+;    |CPU:U_CPU|                          ; 79 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |decremento|CPU:U_CPU                                 ; CPU                 ; work         ;
 ;       |ULASomaSub:ULA1|                 ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|CPU:U_CPU|ULASomaSub:ULA1                 ; ULASomaSub          ; work         ;
-;       |decoderInstru:decoderI|          ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|CPU:U_CPU|decoderInstru:decoderI          ; decoderInstru       ; work         ;
+;       |decoderInstru:decoderI|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|CPU:U_CPU|decoderInstru:decoderI          ; decoderInstru       ; work         ;
 ;       |flipFlop:FLAG|                   ; 7 (7)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|CPU:U_CPU|flipFlop:FLAG                   ; flipFlop            ; work         ;
 ;       |muxGenerico2x1:MUX_ULA|          ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|CPU:U_CPU|muxGenerico2x1:MUX_ULA          ; muxGenerico2x1      ; work         ;
 ;       |muxGenerico4x1:MUX_JMP|          ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|CPU:U_CPU|muxGenerico4x1:MUX_JMP          ; muxGenerico4x1      ; work         ;
@@ -291,7 +292,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |conversorHex7Seg:DEC_HEX3|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|conversorHex7Seg:DEC_HEX3                 ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DEC_HEX4|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|conversorHex7Seg:DEC_HEX4                 ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DEC_HEX5|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|conversorHex7Seg:DEC_HEX5                 ; conversorHex7Seg    ; work         ;
-;    |decoder3x8:decoderBlocos|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|decoder3x8:decoderBlocos                  ; decoder3x8          ; work         ;
+;    |decoder3x8:decoderBlocos|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|decoder3x8:decoderBlocos                  ; decoder3x8          ; work         ;
 ;    |edgeDetector:DETECTORKEY0|          ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|edgeDetector:DETECTORKEY0                 ; edgeDetector        ; work         ;
 ;    |edgeDetector:DETECTORKEY1|          ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|edgeDetector:DETECTORKEY1                 ; edgeDetector        ; work         ;
 ;    |flipFlop:FF_KEY0|                   ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|flipFlop:FF_KEY0                          ; flipFlop            ; work         ;
@@ -299,7 +300,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |flipFlop:FF_LED8|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|flipFlop:FF_LED8                          ; flipFlop            ; work         ;
 ;    |flipFlop:FF_LED9|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|flipFlop:FF_LED9                          ; flipFlop            ; work         ;
 ;    |memoriaRAM:RAM1|                    ; 298 (298)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |decremento|memoriaRAM:RAM1                           ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                    ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|memoriaROM:ROM1                           ; memoriaROM          ; work         ;
+;    |memoriaROM:ROM1|                    ; 58 (58)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|memoriaROM:ROM1                           ; memoriaROM          ; work         ;
 ;    |registradorGenerico:REG_HEX0|       ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|registradorGenerico:REG_HEX0              ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REG_HEX1|       ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|registradorGenerico:REG_HEX1              ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REG_HEX2|       ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |decremento|registradorGenerico:REG_HEX2              ; registradorGenerico ; work         ;
@@ -331,10 +332,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |decremento|CPU:U_CPU|registradorGenerico:PC|DOUT[3]      ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |decremento|CPU:U_CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1] ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |decremento|CPU:U_CPU|registradorGenerico:PC|DOUT[4]      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |decremento|CPU:U_CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7] ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |decremento|CPU:U_CPU|ULASomaSub:ULA1|saida[3]            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |decremento|CPU:U_CPU|decoderInstru:decoderI|saida[3]     ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |decremento|CPU:U_CPU|decoderInstru:decoderI|saida[5]     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
@@ -753,24 +754,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 553                         ;
 ;     ENA SLD           ; 8                           ;
 ;     plain             ; 14                          ;
-; arriav_lcell_comb     ; 533                         ;
+; arriav_lcell_comb     ; 515                         ;
 ;     arith             ; 18                          ;
 ;         1 data inputs ; 9                           ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 8                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 514                         ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 8                           ;
+;     normal            ; 497                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 79                          ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 53                          ;
-;         5 data inputs ; 41                          ;
-;         6 data inputs ; 334                         ;
+;         2 data inputs ; 85                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 64                          ;
+;         5 data inputs ; 56                          ;
+;         6 data inputs ; 277                         ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.50                       ;
-; Average LUT depth     ; 7.10                        ;
+; Average LUT depth     ; 6.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -789,7 +788,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Oct 21 15:55:02 2024
+    Info: Processing started: Mon Oct 21 17:57:10 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off decremento -c decremento
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -878,14 +877,14 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1164 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1146 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1096 logic cells
+    Info (21061): Implemented 1078 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 541 megabytes
-    Info: Processing ended: Mon Oct 21 15:55:08 2024
+    Info: Peak virtual memory: 575 megabytes
+    Info: Processing ended: Mon Oct 21 17:57:16 2024
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:15
 
 

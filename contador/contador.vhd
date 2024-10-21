@@ -72,10 +72,13 @@ architecture arquitetura of contador is
   signal habilita_FPGA_RESET : std_logic;
   signal saida_EDGE_KEY0 : std_logic;
   signal saida_EDGE_KEY1 : std_logic;
+  signal saida_EDGE_KEY2 : std_logic;
   signal KEY0 : std_logic;
   signal KEY1 : std_logic;
+  signal KEY2 : std_logic;
   signal limpaLeitura0 : std_logic;
   signal limpaLeitura1 : std_logic;
+  signal limpaLeitura2 : std_logic;
   
   alias CLK : std_logic is CLOCK_50;
 begin
@@ -195,7 +198,7 @@ KEY1_TRI :  entity work.buffer_3_state_1porta
         port map(entrada => KEY1, habilita =>  habilita_KEY1, saida => DATA_IN(0)); 
 		 
 KEY2_TRI :  entity work.buffer_3_state_1porta
-        port map(entrada => KEY(2), habilita =>  habilita_KEY2, saida => DATA_IN(0)); 
+        port map(entrada => KEY2, habilita =>  habilita_KEY2, saida => DATA_IN(0)); 
 		 
 KEY3_TRI :  entity work.buffer_3_state_1porta
         port map(entrada => KEY(3), habilita =>  habilita_KEY3, saida => DATA_IN(0));
@@ -212,6 +215,11 @@ DETECTORKEY1: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada 
 
 FF_KEY1 : entity work.flipFlop											 
           port map (DIN => '1', DOUT => KEY1, ENABLE => '1', CLK => saida_EDGE_KEY1, RST => limpaLeitura1);
+			 
+DETECTORKEY2: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(2)), saida => saida_EDGE_KEY2); 
+
+FF_KEY2 : entity work.flipFlop											 
+          port map (DIN => '1', DOUT => KEY2, ENABLE => '1', CLK => saida_EDGE_KEY2, RST => limpaLeitura2);
  
 habilita_LEDR <= saida_Dec1(4) AND wr AND saida_Dec2(0) AND not(data_addr(5));
 habilita_LED8 <= saida_Dec1(4) AND wr AND saida_Dec2(1) AND not(data_addr(5));
@@ -247,5 +255,7 @@ HEX5 <= saida_DEC_HEX5;
 
 limpaLeitura0 <= data_addr(0) and data_addr(1) and data_addr(2) and data_addr(3) and data_addr(4) and data_addr(5) and data_addr(6) and data_addr(7) and data_addr(8) and wr;
 limpaLeitura1 <= not(data_addr(0)) and data_addr(1) and data_addr(2) and data_addr(3) and data_addr(4) and data_addr(5) and data_addr(6) and data_addr(7) and data_addr(8) and wr;
+limpaLeitura2 <= data_addr(0) and not(data_addr(1)) and data_addr(2) and data_addr(3) and data_addr(4) and data_addr(5) and data_addr(6) and data_addr(7) and data_addr(8) and wr;
+
 
 end architecture;
