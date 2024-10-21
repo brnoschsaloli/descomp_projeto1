@@ -95,7 +95,8 @@ mne = {
         "AND":  "B",
         "ANDi": "C",
         "CEQi": "D",
-        "ADDi": "E"
+        "ADDi": "E",
+        "SUBi": "F"
     }
 
 #Converte o valor após o caractere arroba '@'
