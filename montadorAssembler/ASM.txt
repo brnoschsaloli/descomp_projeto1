@@ -15,10 +15,10 @@ LDI $0		#Carrega o acumulador com o valor 0
 STA @0		#Armazena o valor do acumulador em MEM[0] (unidades)
 STA @1		#Armazena o valor do acumulador em MEM[1] (dezenas)
 STA @2		#Armazena o valor do acumulador em MEM[2] (centenas)
-STA @3		#Armazena o valor do acumulador em MEM[3] (milhares)
-STA @4		#Armazena o valor do acumulador em MEM[4] (dezenas de milhares)
-STA @5		#Armazena o valor do acumulador em MEM[5] (centenas de milhares)
-STA @6		#Armazena o valor do acumulador em MEM[6] (flag inibir contagem)
+STA @6		#Armazena o valor do acumulador em MEM[6] (milhares)
+STA @7		#Armazena o valor do acumulador em MEM[7] (dezenas de milhares)
+STA @8		#Armazena o valor do acumulador em MEM[8] (centenas de milhares)
+STA @9		#Armazena o valor do acumulador em MEM[9] (flag inibir contagem)
 LDI $9		#Carrega o acumulador com o valor 9
 STA @10		#Armazena o valor do acumulador em MEM[10] (inibir unidade)
 STA @11		#Armazena o valor do acumulador em MEM[11] (inibir dezena)
@@ -26,6 +26,12 @@ STA @12		#Armazena o valor do acumulador em MEM[12] (inibir centena)
 STA @13		#Armazena o valor do acumulador em MEM[13] (inibir milhar)
 STA @14		#Armazena o valor do acumulador em MEM[14] (inibir dezena de milhar)
 STA @15		#Armazena o valor do acumulador em MEM[15] (inibir centena de milhar)
+LDI $0		#Carrega o acumulador com o valor 0
+STA @3		#Armazena o valor do acumulador em MEM[3] (constante 0)
+LDI $1		#Carrega o acumulador com o valor 1
+STA @4		#Armazena o valor do acumulador em MEM[4] (constante 1)
+LDI $10		#Carrega o acumulador com o valor 10
+STA @5		#Armazena o valor do acumulador em MEM[5] (constante 10)
 NOP
 STA @511	#Limpa a leitura do botão zero
 STA @510	#Limpa a leitura do botão um
@@ -60,7 +66,7 @@ JMP .INICIO	#Fecha o laço principal, faz uma nova leitura de KEY0
 NOP
 INCREMENTO:
 STA @511	#Limpa a leitura do botão
-LDA @9		#Carrega o valor de MEM[6] (flag inibir contagem)
+LDA @9		#Carrega o valor de MEM[9] (flag inibir contagem)
 CEQi $0		#Compara o valor com constante 0
 JEQ .INCREMENTAR
 RET
@@ -92,27 +98,27 @@ RET
 VAIUM_M:
 LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
 STA @2		#Armazena o valor do acumulador em MEM[2] (centenas)
-LDA @6		#Carrega valor de MEM[3] no acumulador (milhares)
+LDA @6		#Carrega valor de MEM[6] no acumulador (milhares)
 ADDi $1		#ADDi com a constante 1
 CEQi $10		#Compara o valor com constante 10
 JEQ .VAIUM_DM	#Realiza o carry out caso valor igual a 10
-STA @3		#Salva o incremento em MEM[3] (milhares)
+STA @6		#Salva o incremento em MEM[6] (milhares)
 RET
 VAIUM_DM:
 LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
-STA @3		#Armazena o valor do acumulador em MEM[3] (milhares)
-LDA @7		#Carrega valor de MEM[4] no acumulador (dezenas de milhares)
+STA @6		#Armazena o valor do acumulador em MEM[6] (milhares)
+LDA @7		#Carrega valor de MEM[7] no acumulador (dezenas de milhares)
 ADDi $1		#ADDi com a constante 1
 CEQi $10		#Compara o valor com constante 10
 JEQ .VAIUM_CM	#Realiza o carry out caso valor igual a 10
-STA @4		#Salva o incremento em MEM[4] (dezenas de milhares)
+STA @7		#Salva o incremento em MEM[7] (dezenas de milhares)
 RET
 VAIUM_CM:
 LDA @3		#Carrega valor de MEM[3] no acumulador (constante 0)
-STA @4		#Armazena o valor do acumulador em MEM[3] (milhares)
-LDA @8		#Carrega valor de MEM[4] no acumulador (dezenas de milhares)
+STA @7		#Armazena o valor do acumulador em MEM[6] (milhares)
+LDA @8		#Carrega valor de MEM[7] no acumulador (dezenas de milhares)
 ADDi $1		#ADDi com a constante 1
-STA @4		#Salva o incremento em MEM[4] (dezenas de milhares)
+STA @7		#Salva o incremento em MEM[7] (dezenas de milhares)
 RET
 SALVA_DISP:
 LDA @0 		#Carrega o valor de MEM[0] (unidades)
@@ -121,11 +127,11 @@ LDA @1 		#Carrega o valor de MEM[1] (dezenas)
 STA @289 	#Armazena valor do acumulador de dezenas no HEX1
 LDA @2 		#Carrega o valor de MEM[2] (centenas)
 STA @290 	#Armazena valor do acumulador de centenas no HEX2
-LDA @6 		#Carrega o valor de MEM[3] (milhares)
+LDA @6 		#Carrega o valor de MEM[6] (milhares)
 STA @291 	#Armazena valor do acumulador de unidades no HEX3
-LDA @7 		#Carrega o valor de MEM[4] (dezenas de milhares)
+LDA @7 		#Carrega o valor de MEM[7] (dezenas de milhares)
 STA @292 	#Armazena valor do acumulador de dezenas no HEX4
-LDA @8 		#Carrega o valor de MEM[5] (centenas de milhares)
+LDA @8 		#Carrega o valor de MEM[8] (centenas de milhares)
 STA @293 	#Armazena valor do acumulador de centenas no HEX5
 RET
 RESET:
@@ -133,10 +139,10 @@ LDI $0		#Carrega o acumulador com o valor 0
 STA @0	 	#Armazena o valor do acumulador na MEM[0] (unidades)
 STA @1	 	#Armazena o valor do acumulador na MEM[1] (dezenas)
 STA @2	 	#Armazena o valor do acumulador na MEM[2] (centenas)
-STA @3	 	#Armazena o valor do acumulador na MEM[3] (milhar)
-STA @4	 	#Armazena o valor do acumulador na MEM[4] (dezena de milhar)
-STA @5	 	#Armazena o valor do acumulador na MEM[5] (centena de milhar)
-STA @6	 	#Armazena o valor do acumulador na MEM[6] (flag inibir contagem)
+STA @6	 	#Armazena o valor do acumulador na MEM[6] (milhar)
+STA @7	 	#Armazena o valor do acumulador na MEM[7] (dezena de milhar)
+STA @8	 	#Armazena o valor do acumulador na MEM[8] (centena de milhar)
+STA @9	 	#Armazena o valor do acumulador na MEM[9] (flag inibir contagem)
 STA @257	#Armazena o valor do bit0 do acumulador no LDR8
 RET
 VERIFICA_LIM:
@@ -155,23 +161,23 @@ CEQ @12		#Compara o valor de MEM[12] (inibir centenas)
 JEQ .NEXT_LIM3
 RET
 NEXT_LIM3:
-LDA @6		#Carrega o valor de MEM[3] (milhar)
+LDA @6		#Carrega o valor de MEM[6] (milhar)
 CEQ @13		#Compara o valor de MEM[13] (inibir milhar)
 JEQ .NEXT_LIM4
 RET
 NEXT_LIM4:
-LDA @7		#Carrega o valor de MEM[4] (dezena de milhar)
+LDA @7		#Carrega o valor de MEM[7] (dezena de milhar)
 CEQ @14		#Compara o valor de MEM[10] (inibir dezena de milhar)
 JEQ .NEXT_LIM5
 RET
 NEXT_LIM5:
-LDA @8		#Carrega o valor de MEM[5] (centena de milhar)
+LDA @8		#Carrega o valor de MEM[8] (centena de milhar)
 CEQ @15		#Compara o valor de MEM[10] (inibir centena de milhar)
 JEQ .TODOS_IGUAL
 RET
 TODOS_IGUAL:
 LDI $1		#Carrega o acumulador com o valor 1
-STA @6		#Armazena o valor do acumulador em MEM[6] (flag inibir contagem)
+STA @9		#Armazena o valor do acumulador em MEM[9] (flag inibir contagem)
 STA @257	#Armazena o valor do bit0 do acumulador no LDR8
 RET
 DEFINE_LIM:
