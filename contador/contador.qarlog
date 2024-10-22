@@ -1,0 +1,31 @@
+Quartus Prime Archive log --	/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.qarlog
+
+Archive:	/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.qar
+Date:		Mon Oct 21 23:06:12 2024
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/CPU.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/ULASomaSub.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_1porta.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/buffer_3_state_8portas.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.qpf
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.qsf
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/contador.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/conversorHex7Seg.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoder3X8.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/decoderInstru.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/edgeDetector.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/flipFlop.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/logicaDeDesvio.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaR0M.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/memoriaRAM.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico2x1.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/muxGenerico4x1.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/registradorGenerico.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/contador/somaConstante.vhd
+/home/brnoschsaloli/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 20 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
