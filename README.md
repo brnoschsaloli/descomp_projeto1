@@ -381,6 +381,22 @@ STA @8          # Armazena o novo valor de MEM[5]
 RET             # Retorna da sub-rotina
 ```
 
+
+## Manual de Uso
+
+- aperte KEY0 para incrementar a contagem
+- aperte KEY2 para decrementar a contagem
+- aperte FPGA_RESET para resetar a contagem e os limites
+- caso queira configurar um limite para a contagem:
+  - aperte FPGA_RESET para resetar a contagem e os limites
+  - configure as chaves de 0 a 3 com um número binario menor ou igual a 9
+  - aperte KEY1 para configurar o limite das unidades
+  - configure as chaves de 0 a 3 com um número binario menor ou igual a 9
+  - aperte KEY1 para configurar o limite das dezenas
+  - continue utilizando a mesma lógica até as centenas de milhares (led "fugir" da placa)
+    - a placa não ira voltar para a contagem até que você termine de determinar o limite, uma vez iniciado
+    
+
 ## GitHub do Projeto
 
 Para mais detalhes e acesso ao código completo, visite o repositório no GitHub:
