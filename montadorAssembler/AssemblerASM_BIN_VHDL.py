@@ -1,89 +1,30 @@
+# -*- coding: utf-8 -*-
 """
 - Criado em 07/Fevereiro/2022
-- Atualizado em 19/04/2023
+- Atualizado em [Data Atual]
 
 @autor: Marco Mello e Paulo Santos
 
-
-Regras:
-
-1) O Arquivo ASM.txt não pode conter linhas iniciadas com caracteres ' ' ou '\n')
-2) Linhas somente com comentários são excluídas 
-3) Instruções sem comentário no arquivo ASM receberão como comentário no arquivo BIN a própria instrução
-4) Exemplo de codigo invalido:
-                            0.___JSR @14 #comentario1
-                            1.___#comentario2           << Invalido ( Linha somente com comentário )
-                            2.___                       << Invalido ( Linha vazia )
-                            3.___JMP @5  #comentario3
-                            4.___JEQ @9
-                            5.___NOP
-                            6.___NOP
-                            7.___                       << Invalido ( Linha vazia )
-                            8.___LDI $5                 << Invalido ( Linha iniciada com espaço (' ') )
-                            9.___ STA $0
-                            10.__CEQ @0
-                            11.__JMP @2  #comentario4
-                            12.__NOP
-                            13.__ LDI $4                << Invalido ( Linha iniciada com espaço (' ') )
-                            14.__CEQ @0
-                            15.__JEQ @3
-                            16.__#comentario5           << Invalido ( Linha somente com comentário )
-                            17.__JMP @13
-                            18.__NOP
-                            19.__RET
-                                
-5) Exemplo de código válido (Arquivo ASM.txt):
-                            0.___JSR @14 #comentario1
-                            1.___JMP @5  #comentario3
-                            2.___JEQ @9
-                            3.___NOP
-                            4.___NOP
-                            5.___LDI $5
-                            6.___STA $0
-                            7.___CEQ @0
-                            8.___JMP @2  #comentario4
-                            9.___NOP
-                            10.__LDI $4
-                            11.__CEQ @0
-                            12.__JEQ @3
-                            13.__JMP @13
-                            14.__NOP
-                            15.__RET
-                            
-6) Resultado do código válido (Arquivo BIN.txt):
-                            0.__tmp(0) := x"90E"; -- comentario1
-                            1.__tmp(1) := x"605"; -- comentario3
-                            2.__tmp(2) := x"709"; -- JEQ @9
-                            3.__tmp(3) := x"000"; -- NOP
-                            4.__tmp(4) := x"000"; -- NOP
-                            5.__tmp(5) := x"405"; -- LDI $5
-                            6.__tmp(6) := x"500"; -- STA $0
-                            7.__tmp(7) := x"800"; -- CEQ @0
-                            8.__tmp(8) := x"602"; -- comentario4
-                            9.__tmp(9) := x"000"; -- NOP
-                            10._tmp(10) := x"404"; -- LDI $4
-                            11._tmp(11) := x"800"; -- CEQ @0
-                            12._tmp(12) := x"703"; -- JEQ @3
-                            13._tmp(13) := x"60D"; -- JMP @13
-                            14._tmp(14) := x"000"; -- NOP
-                            15._tmp(15) := x"A00"; -- RET
-
+Modificações:
+- Ajustado para aceitar instruções com registradores no formato 'MNEMONIC ADDRESS, REGISTER'
+- Ajustado para incluir os bits do registrador como os 2 bits mais significativos da codificação da instrução
+- Ajustado para endereços de 9 bits
+- Ajustado o formato da saída para corresponder ao formato solicitado
+- Corrigido o tratamento de labels como operandos em instruções
+- Corrigido o parsing no arquivo .mif para evitar erros de conversão
 """
 
-
-
-inputASM = 'ASM.txt' #Arquivo de entrada de contém o assembly
-outputBIN = 'BIN.txt' #Arquivo de saída que contém o binário formatado para VHDL
-outputMIF = 'initROM.mif' #Arquivo de saída que contém o binário formatado para .mif
+inputASM = 'ASM.txt'     # Arquivo de entrada que contém o assembly
+outputBIN = 'BIN.txt'    # Arquivo de saída que contém o binário formatado para VHDL
+outputMIF = 'initROM.mif' # Arquivo de saída que contém o binário formatado para .mif
 
 noveBits = True
 
-#definição dos mnemônicos e seus
-#respectivo OPCODEs (em Hexadecimal)
+# Definição dos mnemônicos e seus respectivos OPCODEs (em Hexadecimal)
 mne = { 
         "NOP":  "0",
         "LDA":  "1",
-        "SOMA": "2",
+        "ADD":  "2",
         "SUB":  "3",
         "LDI":  "4",
         "STA":  "5",
@@ -99,216 +40,230 @@ mne = {
         "SUBi": "F"
     }
 
-#Converte o valor após o caractere arroba '@'
-#em um valor hexadecimal de 2 dígitos (8 bits)
-def  converteArroba(line):
-    line = line.split('@')
-    line[1] = hex(int(line[1]))[2:].upper().zfill(2)
-    line = ''.join(line)
-    return line
-    
-#Converte o valor após o caractere arroba '@'
-#em um valor hexadecimal de 2 dígitos (8 bits) e...
-#concatena com o bit de habilita 
-def  converteArroba9bits(line):
-    line = line.split('@')
-    if(int(line[1]) > 255 ):
-        line[1] = str(int(line[1]) - 256)
-        line[1] = hex(int(line[1]))[2:].upper().zfill(2)
-        line[1] = "\" & '1' & x\"" + line[1]
-    else:
-        line[1] = hex(int(line[1]))[2:].upper().zfill(2)
-        line[1] = "\" & '0' & x\"" + line[1]
-    line = ''.join(line)
-    return line
- 
-#Converte o valor após o caractere cifrão'$'
-#em um valor hexadecimal de 2 dígitos (8 bits) 
-def  converteCifrao(line):
-    line = line.split('$')
-    line[1] = hex(int(line[1]))[2:].upper().zfill(2)
-    line = ''.join(line)
-    return line
+# Lista de instruções que envolvem registradores
+instructions_with_registers = ["LDI", "LDA", "STA", "ADD", "ADDi", "SUB", "SUBi", "AND", "ANDi"]
 
-#Converte o valor após o caractere arroba '$'
-#em um valor hexadecimal de 2 dígitos (8 bits) e...
-#concatena com o bit de habilita 
-def  converteCifrao9bits(line):
-    line = line.split('$')
-    if(int(line[1]) > 255 ):
-        line[1] = str(int(line[1]) - 256)
-        line[1] = hex(int(line[1]))[2:].upper().zfill(2)
-        line[1] = "\" & '1' & x\"" + line[1]
-    else:
-        line[1] = hex(int(line[1]))[2:].upper().zfill(2)
-        line[1] = "\" & '0' & x\"" + line[1]
-    line = ''.join(line)
-    return line
-        
-#Define a string que representa o comentário
-#a partir do caractere cerquilha '#'
 def defineComentario(line):
     if '#' in line:
         line = line.split('#')
-        line = line[0] + "\t#" + line[1]
+        line = line[0].strip() + "\t#" + line[1]
         return line
     else:
-        return line
+        return line.strip()
 
-#Remove o comentário a partir do caractere cerquilha '#',
-#deixando apenas a instrução
 def defineInstrucao(line):
     line = line.split('#')
-    line = line[0]
+    line = line[0].strip()
     return line
-    
-#Consulta o dicionário e "converte" o mnemônico em
-#seu respectivo valor em hexadecimal
-def trataMnemonico(line):
-    line = line.replace("\n", "") #Remove o caracter de final de linha
-    line = line.replace("\t", "") #Remove o caracter de tabulacao
-    line = line.split(' ')
-    line[0] = mne[line[0]]
-    line = "".join(line)
-    return line
-    
-# Passo 1: Identificar labels no código
+
+def trataMnemonico(mnemonic):
+    return mne.get(mnemonic, None)
+
 def identificarLabels(lines):
     labels = {}
     cont = 0
-
     for line in lines:
         line = line.strip()
-        if line.endswith(':'):  # Identifica labels
-            label = line[:-1]  # Remove o ':'
-            labels[label] = cont  # Armazena o endereço da linha
-        else:
-            cont += 1  # Somente contar se não for label
-
+        if line.endswith(':'):
+            label = line[:-1]
+            labels[label] = cont
+        elif line != '':
+            cont += 1
     return labels
 
 def substituirLabels(lines, labels):
     novaLista = []
     for line in lines:
-        line_original = line.strip()  # Mantém a linha original para debug
-
-        # Ignorar linhas que são labels (aquelas que contêm ":")
-        if ':' not in line_original:  
-            for label in labels:
-                # Checa a presença de ".label" na linha como uma palavra isolada
-                if f".{label}" in line.split():
-                    line = line.replace(f".{label}", f"@{labels[label]}")
-            novaLista.append(line)
-        
+        line_original = line.strip()
+        if line_original.endswith(':'):
+            continue
+        novaLista.append(line)
     return novaLista
 
-with open(inputASM, "r") as f: #Abre o arquivo ASM
-    lines = f.readlines() #Verifica a quantidade de linhas
+def parseInstructionWithRegister(line, labels):
+    line = line.strip()
+    # Remove multiple spaces
+    line = ' '.join(line.split())
+    # Split on comma
+    if ',' in line:
+        parts = line.split(',')
+        if len(parts) != 2:
+            raise ValueError("Invalid instruction format: {}".format(line))
+        left_part = parts[0].strip()
+        right_part = parts[1].strip()
+        # Split left part into mnemonic and address
+        tokens = left_part.split()
+        if len(tokens) != 2:
+            raise ValueError("Invalid instruction format: {}".format(line))
+        mnemonic = tokens[0]
+        address = tokens[1]
+        # Extract register number
+        register = right_part
+        if register[0] != 'R' and not register[0].isdigit():
+            raise ValueError("Invalid register: {}".format(register))
+        if register.startswith('R'):
+            register_number = int(register[1:])
+        else:
+            register_number = int(register)
+        if register_number < 0 or register_number > 3:
+            raise ValueError("Invalid register number (should be 0-3): {}".format(register_number))
+        # Resolve address (could be a label)
+        if address in labels:
+            address_value = labels[address]
+        else:
+            try:
+                address_value = int(address)
+            except ValueError:
+                raise ValueError(f"Invalid address '{address}' in instruction '{line}'")
+        if address_value < 0 or address_value > 511:
+            raise ValueError("Address out of range (0-511): {}".format(address_value))
+        return mnemonic, address_value, register_number
+    else:
+        raise ValueError("Invalid instruction format (missing comma): {}".format(line))
+
+def parseInstructionWithoutRegister(line, labels):
+    tokens = line.strip().split()
+    if len(tokens) == 1:
+        # Instructions like NOP or RET
+        mnemonic = tokens[0]
+        return mnemonic, None
+    elif len(tokens) == 2:
+        mnemonic = tokens[0]
+        operand = tokens[1]
+        if operand.startswith('@') or operand.startswith('$'):
+            value = int(operand[1:])
+            return mnemonic, value
+        else:
+            # Handle labels or addresses without @ or $
+            if operand in labels:
+                value = labels[operand]
+            else:
+                try:
+                    value = int(operand)
+                except ValueError:
+                    raise ValueError(f"Invalid operand '{operand}' for instruction '{line}'")
+            return mnemonic, value
+    else:
+        raise ValueError("Invalid instruction format: {}".format(line))
+
+def int_to_bin_str(value, bits):
+    return bin(value)[2:].zfill(bits)
+
+with open(inputASM, "r") as f:
+    lines = f.readlines()
 
 # Primeira varredura para identificar labels
 labels = identificarLabels(lines)
 
-# Segunda varredura para substituir labels
+# Segunda varredura para preparar as linhas (remover labels)
 lines = substituirLabels(lines, labels)
 
-with open(outputBIN, "w+") as f:  #Abre o destino BIN
-
-    cont = 0 #Cria uma variável para contagem
-    
-    for line in lines:        
-        
-        #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
-        if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
-            line = line.replace("\n", "")
-            print("-- Sintaxe invalida" + ' na Linha: ' + ' --> (' + line + ')') #Print apenas para debug
-        
-        #Se a linha for válida para conversão, executa
-        else:
-            
-            #Exemplo de linha => 1. JSR @14 #comentario1
-            comentarioLine = defineComentario(line).replace("\n","") #Define o comentário da linha. Ex: #comentario1
-            instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
-            
-            instrucaoLine = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
-                  
-            if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
-                if noveBits == False:
-                    instrucaoLine = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
+with open(outputBIN, "w+") as f:
+    cont = 0
+    for line in lines:
+        line = line.strip()
+        # Ignora linhas vazias ou comentários
+        if not line or line.startswith(';') or line.startswith('#'):
+            continue
+        comentarioLine = defineComentario(line)
+        instrucaoLine = defineInstrucao(line)
+        try:
+            # Verifica se a instrução é uma label (e pula)
+            if instrucaoLine.endswith(':'):
+                continue
+            # Verifica se a instrução é uma das que envolvem registradores
+            mnemonic = instrucaoLine.split()[0]
+            if mnemonic in instructions_with_registers:
+                # Parse instruction with register
+                mnemonic, address_value, register_number = parseInstructionWithRegister(instrucaoLine, labels)
+                opcode = int(trataMnemonico(mnemonic), 16)
+                # Construir a codificação da instrução
+                # Bits:
+                # [15:14] - Register bits
+                # [13:10] - Opcode (4 bits)
+                # [9]     - Bit extra (we'll set to 0 or as needed)
+                # [8:0]   - Address (9 bits)
+                # We will split the instruction to match the output format
+                reg_bits_str = int_to_bin_str(register_number, 2)
+                opcode_str = int_to_bin_str(opcode, 4)
+                address_bits_str = int_to_bin_str(address_value, 9)
+                # If noveBits is True and address is 9 bits, we need to handle bit 9 separately
+                bit9 = address_bits_str[0]  # Most significant bit of address
+                address_bits_str = address_bits_str[1:]  # Remaining 8 bits of address
+                # Now, construct the output string
+                line_out = f'tmp({cont}) := "{reg_bits_str}" & x"{int(opcode_str,2):X}" & \'{bit9}\' & x"{int(address_bits_str,2):02X}";\t-- {comentarioLine}\n'
+            else:
+                # Parse instruction without register
+                result = parseInstructionWithoutRegister(instrucaoLine, labels)
+                if len(result) == 2:
+                    mnemonic, operand = result
+                    opcode = int(trataMnemonico(mnemonic), 16)
+                    reg_bits_str = "00"  # No register, so set to '00'
+                    if operand is not None:
+                        address_value = operand
+                        address_bits_str = int_to_bin_str(address_value, 9)
+                        bit9 = address_bits_str[0]
+                        address_bits_str = address_bits_str[1:]
+                    else:
+                        bit9 = '0'
+                        address_bits_str = "00"
+                    opcode_str = int_to_bin_str(opcode, 4)
+                    # Now, construct the output string
+                    line_out = f'tmp({cont}) := "{reg_bits_str}" & x"{int(opcode_str,2):X}" & \'{bit9}\' & x"{int(address_bits_str,2):02X}";\t-- {comentarioLine}\n'
                 else:
-                    instrucaoLine = converteArroba9bits(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
-                    
-            elif '$' in instrucaoLine: #Se encontrar o caractere cifrao '$'
-                if noveBits == False:
-                    instrucaoLine = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
-                else:
-                    instrucaoLine = converteCifrao9bits(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
-                
-            else: #Senão, se a instrução nao possuir nenhum imediato, ou seja, nao conter '@' ou '$'
-                instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
-                if noveBits == False:
-                    instrucaoLine = instrucaoLine + '00' #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
-                else:
-                    instrucaoLine = instrucaoLine + "\" & " + "\'0\' & " + "x\"00" #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
-                
-            
-            line = 'tmp(' + str(cont) + ') := x"' + instrucaoLine + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
-                                                                                                       #Entrada => 1. JSR @14 #comentario1
-                                                                                                       #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
-                                        
-            cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
-            f.write(line) #Escreve no arquivo BIN.txt
-            
-            print(line,end = '') #Print apenas para debug
-            
+                    raise ValueError("Invalid instruction format: {}".format(instrucaoLine))
+            cont += 1
+            f.write(line_out)
+            print(line_out, end='')
+        except ValueError as e:
+            print(f"Erro na linha {cont+1}: {e}")
+            continue
 
-            
-############################             
-############################            
-#Conversão para arquivo .mif
-############################             
-############################
-            
-with open(outputMIF, "r") as f: #Abre o arquivo .mif
-    headerMIF = f.readlines() #Faz a leitura das linhas do arquivo,
-                              #para fazer a aquisição do header
-    
-    
-with open(outputBIN, "r") as f: #Abre o arquivo BIN
-    lines = f.readlines() #Faz a leitura das linhas do arquivo
-    
-    
-with open(outputMIF, "w") as f:  #Abre o destino .mif novamente
-                                 #agora para preenchê-lo com o pograma
+# Conversão para arquivo .mif
+with open(outputMIF, "r") as f:
+    headerMIF = f.readlines()
 
-    cont = 0 #Cria uma variável para contagem
-    
-    #########################################
-    #Preenche com o header lido anteriormente 
-    for lineHeader in headerMIF:      
-        if cont < 21:           #Contagem das linhas de cabeçalho
-            f.write(lineHeader) #Escreve no arquivo se saída .mif o cabeçalho (21 linhas)
-        cont = cont + 1         #Incrementa varíavel de contagem
-   #-----------------------------------------
-   ##########################################
-  
-    for line in lines: #Varre as linhas do código formatado para a ROM (VHDL)
-    
-        replacements = [('t', ''), ('m', ''), ('p', ''), ('(', ''), (')', ''), ('=', ''), ('x', ''), ('"', '')] #Define os caracteres que serão excluídos
-        
-        ##########################################
-        #Remove os caracteres que foram definidos
-        for char, replacement in replacements:
-            if char in line:
-                line = line.replace(char, replacement)
-        #-----------------------------------------
-        ##########################################
-                
-        line = line.split('#') #Remove o comentário da linha
-        
-        if "\n" in line[0]:
-            line = line[0] 
-        else:
-            line = line[0] + '\n' #Insere a quebra de linha ('\n') caso não tenha
+with open(outputBIN, "r") as f:
+    bin_lines = f.readlines()
 
-        f.write(line) #Escreve no arquivo initROM.mif
-    f.write("END;") #Acrescente o indicador de finalização da memória. (END;)
+with open(outputMIF, "w") as f:
+    # Escreve o header
+    for lineHeader in headerMIF:
+        f.write(lineHeader)
+    # Escreve as instruções
+    for line in bin_lines:
+        # Remove caracteres indesejados e formata para o .mif
+        line_parts = line.split('--')[0].strip()  # Remove comentário
+        # Extract tmp(index) and the assignment
+        if ':=' in line_parts:
+            index_part, value_part = line_parts.split(':=')
+            index = index_part.strip()[4:-1]  # Extract index number
+            value_part = value_part.strip(';').strip()  # Remove ';' at the end and extra spaces
+            # Now, we need to parse the value_part
+            # Expected format: "RegBits" & x"Opcode" & 'Bit9' & x"Address"
+            # Remove spaces
+            value_part = value_part.replace(' ', '')
+            # Extract RegBits
+            reg_bits = value_part[1:3]  # Between the first pair of quotes
+            # Extract Opcode
+            opcode_start = value_part.find('x"') + 2
+            opcode_end = value_part.find('"', opcode_start)
+            opcode_hex = value_part[opcode_start:opcode_end]
+            # Extract Bit9
+            bit9_index = value_part.find("'", opcode_end) + 1
+            bit9 = value_part[bit9_index]
+            # Extract Address
+            address_start = value_part.find('x"', bit9_index) + 2
+            address_end = value_part.find('"', address_start)
+            address_hex = value_part[address_start:address_end]
+            # Convert all parts to binary
+            reg_bits_bin = reg_bits
+            opcode_bin = int_to_bin_str(int(opcode_hex, 16), 4)
+            address_bin = int_to_bin_str(int(address_hex, 16), 8)
+            # Combine all bits
+            full_instruction_bin = reg_bits_bin + opcode_bin + bit9 + address_bin
+            # Convert to hex for .mif file
+            full_instruction_hex = hex(int(full_instruction_bin, 2))[2:].upper().zfill(4)
+            # Write to .mif file
+            f.write(f"{index}: {full_instruction_hex};\n")
+    f.write("END;")
