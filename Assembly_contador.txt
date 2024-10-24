@@ -108,15 +108,17 @@ RET
 VAIUM_DM:
 LDI $0		#Carrega valor 0 no acumulador (constante 0)
 STA @6		#Armazena o valor do acumulador em MEM[6] (milhares)
-LDA @7		#Carrega valor de MEM[7] no acumulador (dezenas de milhares)
-ADDi $1		#ADDi com a constante 1
 LDA @8		#Carrega valor de MEM[8] no acumulador (centenas de milhares)
 CEQi $2		#Compara o valor com constante 2
 JEQ .COMPARA4	#Pula para o fim da rotina
+LDA @7		#Carrega valor de MEM[7] no acumulador (dezenas de milhares)
+ADDi $1		#ADDi com a constante 1
 CEQi $10	#Compara o valor com constante 10
 JEQ .VAIUM_CM	#Realiza o carry out caso valor igual a 10
 JMP .END_DM
 COMPARA4:
+LDA @7		#Carrega valor de MEM[7] no acumulador (dezenas de milhares)
+ADDi $1		#ADDi com a constante 1
 CEQi $4		#Compara o valor com constante 4
 JEQ .VAIUM_CM	#Realiza o carry out caso valor igual a 4
 END_DM:
