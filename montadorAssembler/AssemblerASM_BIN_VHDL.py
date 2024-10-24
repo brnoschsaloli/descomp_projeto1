@@ -41,7 +41,7 @@ mne = {
     }
 
 # Lista de instruções que envolvem registradores
-instructions_with_registers = ["LDI", "LDA", "STA", "ADD", "ADDi", "SUB", "SUBi", "AND", "ANDi"]
+instructions_with_registers = ["LDI", "LDA", "STA", "ADD", "ADDi", "SUB", "SUBi", "AND", "ANDi", "CEQi"]
 
 def defineComentario(line):
     if '#' in line:
@@ -71,7 +71,7 @@ def identificarLabels(lines):
             cont += 1
     return labels
 
-def substituirLabels(lines, labels):
+def removeLabels(lines):
     novaLista = []
     for line in lines:
         line_original = line.strip()
@@ -156,7 +156,7 @@ with open(inputASM, "r") as f:
 labels = identificarLabels(lines)
 
 # Segunda varredura para preparar as linhas (remover labels)
-lines = substituirLabels(lines, labels)
+lines = removeLabels(lines)
 
 with open(outputBIN, "w+") as f:
     cont = 0
@@ -168,9 +168,6 @@ with open(outputBIN, "w+") as f:
         comentarioLine = defineComentario(line)
         instrucaoLine = defineInstrucao(line)
         try:
-            # Verifica se a instrução é uma label (e pula)
-            if instrucaoLine.endswith(':'):
-                continue
             # Verifica se a instrução é uma das que envolvem registradores
             mnemonic = instrucaoLine.split()[0]
             if mnemonic in instructions_with_registers:
