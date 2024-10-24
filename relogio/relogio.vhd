@@ -77,6 +77,7 @@ architecture arquitetura of relogio is
   signal habilita_KEY3 : std_logic;
   signal habilita_FPGA_RESET : std_logic;
   signal saida_1sec : std_logic;
+  signal saida_EDGE_KEY0 : std_logic;
   signal saida_EDGE_KEY1 : std_logic;
   signal saida_EDGE_KEY2 : std_logic;
   signal KEY0 : std_logic;
@@ -215,6 +216,8 @@ FPGA_RESET_TRI :  entity work.buffer_3_state_1porta
 divisor : entity work.divisorGenerico
             generic map (divisor => 390625)   -- divide por 50M.
             port map (clk => CLK, saida_clk => saida_1sec);
+				
+DETECTORKEY0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_EDGE_KEY0);
 
 FF_KEY0 : entity work.flipFlop											 
           port map (DIN => '1', DOUT => KEY0, ENABLE => '1', CLK => saida_1sec, RST => limpaLeitura0);
