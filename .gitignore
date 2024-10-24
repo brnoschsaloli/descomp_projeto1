@@ -1,0 +1,12 @@
+contador/db/
+contador/incremental_db/
+contador/output_files/
+contador/simulation/
+decremento/db/
+decremento/incremental_db/
+decremento/output_files/
+decremento/simulation/
+relogio/db/
+relogio/incremental_db/
+relogio/output_files/
+relogio/simulation/
