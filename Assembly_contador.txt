@@ -101,8 +101,8 @@ LDI $0		#Carrega valor 0 no acumulador (constante 0)
 STA @2		#Armazena o valor do acumulador em MEM[2] (centenas)
 LDA @6		#Carrega valor de MEM[6] no acumulador (milhares)
 ADDi $1		#ADDi com a constante 1
-CEQi $6		#Compara o valor com constante 10
-JEQ .VAIUM_DM	#Realiza o carry out caso valor igual a 10
+CEQi $6		#Compara o valor com constante 6
+JEQ .VAIUM_DM	#Realiza o carry out caso valor igual a 6
 STA @6		#Salva o incremento em MEM[6] (milhares)
 RET
 VAIUM_DM:

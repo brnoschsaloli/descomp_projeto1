@@ -76,7 +76,7 @@ architecture arquitetura of relogio is
   signal habilita_KEY2 : std_logic;
   signal habilita_KEY3 : std_logic;
   signal habilita_FPGA_RESET : std_logic;
-  signal saida_EDGE_KEY0 : std_logic;
+  signal saida_1sec : std_logic;
   signal saida_EDGE_KEY1 : std_logic;
   signal saida_EDGE_KEY2 : std_logic;
   signal KEY0 : std_logic;
@@ -212,12 +212,14 @@ KEY3_TRI :  entity work.buffer_3_state_1porta
 FPGA_RESET_TRI :  entity work.buffer_3_state_1porta
         port map(entrada => FPGA_RESET_N, habilita =>  habilita_FPGA_RESET, saida => DATA_IN(0)); 	
 
-DETECTORKEY0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_EDGE_KEY0); 
+divisor : entity work.divisorGenerico
+            generic map (divisor => 390625)   -- divide por 50M.
+            port map (clk => CLK, saida_clk => saida_1sec);
 
 FF_KEY0 : entity work.flipFlop											 
-          port map (DIN => '1', DOUT => KEY0, ENABLE => '1', CLK => saida_EDGE_KEY0, RST => limpaLeitura0);
+          port map (DIN => '1', DOUT => KEY0, ENABLE => '1', CLK => saida_1sec, RST => limpaLeitura0);
 			 
-DETECTORKEY1: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(1)), saida => saida_EDGE_KEY1); 
+DETECTORKEY1: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(1)), saida => saida_EDGE_KEY1);
 
 FF_KEY1 : entity work.flipFlop											 
           port map (DIN => '1', DOUT => KEY1, ENABLE => '1', CLK => saida_EDGE_KEY1, RST => limpaLeitura1);
