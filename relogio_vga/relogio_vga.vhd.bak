@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity relogio_vga is
+entity relogio is
   -- Total de bits das entradas e saidas
   generic ( larguraDados_ROM : natural := 15;
         larguraEnderecos_ROM : natural := 9;
@@ -33,7 +33,7 @@ entity relogio_vga is
 end entity;
 
 
-architecture arquitetura of relogio_vga is
+architecture arquitetura of relogio is
 
   signal rom_addr : std_logic_vector(larguraEnderecos_ROM-1 downto 0);  -- Endereço da ROM para a CPU
   signal data_addr : std_logic_vector(larguraEnderecos_OUT-1 downto 0);  -- Endereço da RAM para a CPU
@@ -86,13 +86,6 @@ architecture arquitetura of relogio_vga is
   signal limpaLeitura0 : std_logic;
   signal limpaLeitura1 : std_logic;
   signal limpaLeitura2 : std_logic;
-  signal	saidaRegCol : std_logic_vector(7 downto 0);
-  signal	saidaRegLin : std_logic_vector(7 downto 0);
-  signal	saidaRegData : std_logic_vector(5 downto 0);
-  signal habilitaVGA : std_logic;
-  signal habilitaColVGA : std_logic;
-  signal habilitaLinVGA : std_logic;
-  signal habilitaDataVGA : std_logic;
   
   alias CLK : std_logic is CLOCK_50;
 begin
@@ -239,14 +232,7 @@ DETECTORKEY2: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada 
 FF_KEY2 : entity work.flipFlop											 
           port map (DIN => '1', DOUT => KEY2, ENABLE => '1', CLK => saida_EDGE_KEY2, RST => limpaLeitura2);
 			 
-REG_VGA_COL : entity work.registradorGenerico   generic map (larguraDados => 8)
-				 port map (DIN => data_OUT, DOUT => saidaRegCol, ENABLE => habilitaColVGA, CLK => CLK, RST => '0');
-
-REG_VGA_LIN : entity work.registradorGenerico   generic map (larguraDados => 8)
-				 port map (DIN => data_OUT, DOUT => saidaRegLin, ENABLE => habilitaLinVGA, CLK => CLK, RST => '0');
-
-REG_VGA_DATA : entity work.registradorGenerico   generic map (larguraDados => 6)
-				 port map (DIN => data_OUT(5 downto 0), DOUT => saidaRegData, ENABLE => habilitaDataVGA, CLK => CLK, RST => '0');		 
+			 
 			 
 			 
 VGA : entity work.driverVGA
@@ -257,13 +243,15 @@ VGA : entity work.driverVGA
     VGA_R     =>  VGA_R, -- DE0-CV -> VGA_R
     VGA_G     =>  VGA_G, -- DE0-CV -> VGA_G
     VGA_B     =>  VGA_B, -- DE0-CV -> VGA_B
-    posCol    =>  saidaRegCol, -- Posição da Coluna(X)
-    posLin    =>  saidaRegLin, -- Posição da Linha(Y)
-    dadoIN    =>  "10" & saidaRegData, -- Posição do carac. dentro do arquivo mapaDeCaracteres
+    posCol    =>  x"02", -- Posição da Coluna(X)
+    posLin    =>  x"02", -- Posição da Linha(Y)
+    dadoIN    =>  "00000001", -- Posição do carac. dentro do arquivo mapaDeCaracteres
     VideoRAMWREnable => '1'
     );
 			 
-
+			 
+			 
+			 
 			 
 			 
  
@@ -287,12 +275,6 @@ habilita_KEY1 <= saida_Dec1(5) AND rd AND saida_Dec2(1) AND data_addr(5);
 habilita_KEY2 <= saida_Dec1(5) AND rd AND saida_Dec2(2) AND data_addr(5);
 habilita_KEY3 <= saida_Dec1(5) AND rd AND saida_Dec2(3) AND data_addr(5);
 habilita_FPGA_RESET <= saida_Dec1(5) AND rd AND saida_Dec2(4) AND data_addr(5);
-
-
-habilitaColVGA  <= saida_Dec1(6) and saida_Dec2(0) and wr; --384
-habilitaLinVGA  <= saida_Dec1(6) and saida_Dec2(1) and wr; --385
-habilitaDataVGA <= saida_Dec1(6) and saida_Dec2(2) and wr; --386
-habilitaVGA     <= saida_Dec1(6) and saida_Dec2(3) and wr; --387
 
 LEDR(7 downto 0) <= saida_REG_LEDR;
 LEDR(8) <= saida_FF_LED8;
