@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio_vga
-Fri Oct 25 18:02:56 2024
+Fri Oct 25 18:16:18 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -113,7 +113,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 25 18:02:56 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri Oct 25 18:16:18 2024       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; relogio_vga                                 ;
 ; Top-level Entity Name           ; relogio_vga                                 ;
@@ -234,7 +234,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
@@ -243,7 +243,8 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 8            ;   0.0%      ;
 ;     Processor 9            ;   0.0%      ;
 ;     Processor 10           ;   0.0%      ;
-;     Processors 11-14       ;   0.0%      ;
+;     Processor 11           ;   0.0%      ;
+;     Processors 12-14       ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -300,14 +301,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 908            ;
+; Estimate of Logic utilization (ALMs needed) ; 899            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 1128           ;
-;     -- 7 input functions                    ; 75             ;
-;     -- 6 input functions                    ; 524            ;
-;     -- 5 input functions                    ; 126            ;
-;     -- 4 input functions                    ; 185            ;
-;     -- <=3 input functions                  ; 218            ;
+; Combinational ALUT usage for logic          ; 1123           ;
+;     -- 7 input functions                    ; 70             ;
+;     -- 6 input functions                    ; 517            ;
+;     -- 5 input functions                    ; 129            ;
+;     -- 4 input functions                    ; 194            ;
+;     -- <=3 input functions                  ; 213            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 701            ;
 ;                                             ;                ;
@@ -319,8 +320,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 649            ;
-; Total fan-out                               ; 7969           ;
-; Average fan-out                             ; 3.98           ;
+; Total fan-out                               ; 7931           ;
+; Average fan-out                             ; 3.97           ;
 +---------------------------------------------+----------------+
 
 
@@ -329,11 +330,11 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
 ; Compilation Hierarchy Node                             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                      ; Entity Name                     ; Library Name ;
 +--------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
-; |relogio_vga                                           ; 1128 (34)           ; 701 (0)                   ; 4096              ; 0          ; 82   ; 0            ; |relogio_vga                                                                                                                                                             ; relogio_vga                     ; work         ;
-;    |CPU:U_CPU|                                         ; 92 (0)              ; 51 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU                                                                                                                                                   ; CPU                             ; work         ;
+; |relogio_vga                                           ; 1123 (32)           ; 701 (0)                   ; 4096              ; 0          ; 82   ; 0            ; |relogio_vga                                                                                                                                                             ; relogio_vga                     ; work         ;
+;    |CPU:U_CPU|                                         ; 90 (0)              ; 51 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU                                                                                                                                                   ; CPU                             ; work         ;
 ;       |ULASomaSub:ULA1|                                ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU|ULASomaSub:ULA1                                                                                                                                   ; ULASomaSub                      ; work         ;
 ;       |bancoRegistradoresArqRegMem:BANCOREG|           ; 12 (12)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU|bancoRegistradoresArqRegMem:BANCOREG                                                                                                              ; bancoRegistradoresArqRegMem     ; work         ;
-;       |decoderInstru:decoderI|                         ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU|decoderInstru:decoderI                                                                                                                            ; decoderInstru                   ; work         ;
+;       |decoderInstru:decoderI|                         ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU|decoderInstru:decoderI                                                                                                                            ; decoderInstru                   ; work         ;
 ;       |flipFlop:FLAG|                                  ; 7 (7)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU|flipFlop:FLAG                                                                                                                                     ; flipFlop                        ; work         ;
 ;       |muxGenerico2x1:MUX_ULA|                         ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU|muxGenerico2x1:MUX_ULA                                                                                                                            ; muxGenerico2x1                  ; work         ;
 ;       |muxGenerico4x1:MUX_JMP|                         ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|CPU:U_CPU|muxGenerico4x1:MUX_JMP                                                                                                                            ; muxGenerico4x1                  ; work         ;
@@ -346,7 +347,8 @@ https://fpgasoftware.intel.com/eula.
 ;    |conversorHex7Seg:DEC_HEX3|                         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|conversorHex7Seg:DEC_HEX3                                                                                                                                   ; conversorHex7Seg                ; work         ;
 ;    |conversorHex7Seg:DEC_HEX4|                         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|conversorHex7Seg:DEC_HEX4                                                                                                                                   ; conversorHex7Seg                ; work         ;
 ;    |conversorHex7Seg:DEC_HEX5|                         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|conversorHex7Seg:DEC_HEX5                                                                                                                                   ; conversorHex7Seg                ; work         ;
-;    |decoder3x8:decoderEnderecos|                       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|decoder3x8:decoderEnderecos                                                                                                                                 ; decoder3x8                      ; work         ;
+;    |decoder3x8:decoderBlocos|                          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|decoder3x8:decoderBlocos                                                                                                                                    ; decoder3x8                      ; work         ;
+;    |decoder3x8:decoderEnderecos|                       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|decoder3x8:decoderEnderecos                                                                                                                                 ; decoder3x8                      ; work         ;
 ;    |divisorGenerico:divisor|                           ; 25 (25)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|divisorGenerico:divisor                                                                                                                                     ; divisorGenerico                 ; work         ;
 ;    |driverVGA:VGA|                                     ; 496 (1)             ; 58 (1)                    ; 4096              ; 0          ; 0    ; 0            ; |relogio_vga|driverVGA:VGA                                                                                                                                               ; driverVGA                       ; work         ;
 ;       |calcMemAddr:CalcMemAddr|                        ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|driverVGA:VGA|calcMemAddr:CalcMemAddr                                                                                                                       ; calcMemAddr                     ; work         ;
@@ -365,10 +367,10 @@ https://fpgasoftware.intel.com/eula.
 ;    |flipFlop:FF_KEY0|                                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|flipFlop:FF_KEY0                                                                                                                                            ; flipFlop                        ; work         ;
 ;    |flipFlop:FF_KEY1|                                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|flipFlop:FF_KEY1                                                                                                                                            ; flipFlop                        ; work         ;
 ;    |flipFlop:FF_KEY2|                                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|flipFlop:FF_KEY2                                                                                                                                            ; flipFlop                        ; work         ;
-;    |flipFlop:FF_LED8|                                  ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|flipFlop:FF_LED8                                                                                                                                            ; flipFlop                        ; work         ;
+;    |flipFlop:FF_LED8|                                  ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|flipFlop:FF_LED8                                                                                                                                            ; flipFlop                        ; work         ;
 ;    |flipFlop:FF_LED9|                                  ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|flipFlop:FF_LED9                                                                                                                                            ; flipFlop                        ; work         ;
 ;    |memoriaRAM:RAM1|                                   ; 298 (298)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|memoriaRAM:RAM1                                                                                                                                             ; memoriaRAM                      ; work         ;
-;    |memoriaROM:ROM1|                                   ; 132 (132)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|memoriaROM:ROM1                                                                                                                                             ; memoriaROM                      ; work         ;
+;    |memoriaROM:ROM1|                                   ; 130 (130)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|memoriaROM:ROM1                                                                                                                                             ; memoriaROM                      ; work         ;
 ;    |registradorGenerico:REG_HEX0|                      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|registradorGenerico:REG_HEX0                                                                                                                                ; registradorGenerico             ; work         ;
 ;    |registradorGenerico:REG_HEX1|                      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|registradorGenerico:REG_HEX1                                                                                                                                ; registradorGenerico             ; work         ;
 ;    |registradorGenerico:REG_HEX2|                      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio_vga|registradorGenerico:REG_HEX2                                                                                                                                ; registradorGenerico             ; work         ;
@@ -1219,27 +1221,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 32                          ;
 ;     SCLR              ; 29                          ;
 ;     plain             ; 42                          ;
-; arriav_lcell_comb     ; 1128                        ;
+; arriav_lcell_comb     ; 1123                        ;
 ;     arith             ; 96                          ;
 ;         1 data inputs ; 70                          ;
 ;         2 data inputs ; 14                          ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 11                          ;
-;     extend            ; 75                          ;
-;         7 data inputs ; 75                          ;
+;     extend            ; 70                          ;
+;         7 data inputs ; 70                          ;
 ;     normal            ; 957                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 84                          ;
-;         3 data inputs ; 45                          ;
-;         4 data inputs ; 174                         ;
-;         5 data inputs ; 126                         ;
-;         6 data inputs ; 524                         ;
+;         2 data inputs ; 81                          ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 183                         ;
+;         5 data inputs ; 129                         ;
+;         6 data inputs ; 517                         ;
 ; boundary_port         ; 82                          ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.50                       ;
-; Average LUT depth     ; 6.33                        ;
+; Average LUT depth     ; 6.28                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1258,7 +1260,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Oct 25 18:02:50 2024
+    Info: Processing started: Fri Oct 25 18:16:12 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio_vga -c relogio_vga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -1447,15 +1449,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]" File: /home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio_vga/relogio_vga.vhd Line: 18
-Info (21057): Implemented 1850 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1845 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 66 output pins
-    Info (21061): Implemented 1760 logic cells
+    Info (21061): Implemented 1755 logic cells
     Info (21064): Implemented 8 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 586 megabytes
-    Info: Processing ended: Fri Oct 25 18:02:56 2024
+    Info: Peak virtual memory: 562 megabytes
+    Info: Processing ended: Fri Oct 25 18:16:18 2024
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:14
 
 

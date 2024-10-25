@@ -1,5 +1,5 @@
 Timing Analyzer report for relogio_vga
-Fri Oct 25 18:03:34 2024
+Fri Oct 25 18:16:55 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -102,24 +102,24 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 2.67        ;
+; Average used               ; 2.58        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  14.4%      ;
-;     Processor 3            ;  14.0%      ;
-;     Processor 4            ;  13.9%      ;
-;     Processor 5            ;  12.5%      ;
-;     Processor 6            ;  12.5%      ;
-;     Processor 7            ;  12.5%      ;
-;     Processor 8            ;  12.5%      ;
-;     Processor 9            ;  12.5%      ;
-;     Processor 10           ;  12.5%      ;
-;     Processor 11           ;  12.5%      ;
-;     Processor 12           ;  12.5%      ;
-;     Processor 13           ;  12.5%      ;
-;     Processor 14           ;  12.5%      ;
+;     Processor 2            ;  14.3%      ;
+;     Processor 3            ;  13.6%      ;
+;     Processor 4            ;  13.3%      ;
+;     Processor 5            ;  11.7%      ;
+;     Processor 6            ;  11.7%      ;
+;     Processor 7            ;  11.7%      ;
+;     Processor 8            ;  11.7%      ;
+;     Processor 9            ;  11.7%      ;
+;     Processor 10           ;  11.7%      ;
+;     Processor 11           ;  11.7%      ;
+;     Processor 12           ;  11.7%      ;
+;     Processor 13           ;  11.7%      ;
+;     Processor 14           ;  11.7%      ;
 +----------------------------+-------------+
 
 
@@ -141,8 +141,8 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+-------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name              ; Note ;
 +------------+-----------------+-------------------------+------+
-; 95.5 MHz   ; 95.5 MHz        ; CLOCK_50                ;      ;
-; 106.67 MHz ; 106.67 MHz      ; driverVGA:VGA|pixel_clk ;      ;
+; 89.36 MHz  ; 89.36 MHz       ; CLOCK_50                ;      ;
+; 102.99 MHz ; 102.99 MHz      ; driverVGA:VGA|pixel_clk ;      ;
 +------------+-----------------+-------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -153,14 +153,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+--------------------------------------------------+
-; Slow 1100mV 85C Model Setup Summary              ;
-+-------------------------+--------+---------------+
-; Clock                   ; Slack  ; End Point TNS ;
-+-------------------------+--------+---------------+
-; CLOCK_50                ; -9.471 ; -4869.331     ;
-; driverVGA:VGA|pixel_clk ; -8.375 ; -406.200      ;
-+-------------------------+--------+---------------+
++---------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary               ;
++-------------------------+---------+---------------+
+; Clock                   ; Slack   ; End Point TNS ;
++-------------------------+---------+---------------+
+; CLOCK_50                ; -10.191 ; -4874.252     ;
+; driverVGA:VGA|pixel_clk ; -8.710  ; -428.206      ;
++-------------------------+---------+---------------+
 
 
 +-------------------------------------------------+
@@ -168,8 +168,8 @@ HTML report is unavailable in plain text report export.
 +-------------------------+-------+---------------+
 ; Clock                   ; Slack ; End Point TNS ;
 +-------------------------+-------+---------------+
-; driverVGA:VGA|pixel_clk ; 0.412 ; 0.000         ;
-; CLOCK_50                ; 0.443 ; 0.000         ;
+; CLOCK_50                ; 0.444 ; 0.000         ;
+; driverVGA:VGA|pixel_clk ; 0.447 ; 0.000         ;
 +-------------------------+-------+---------------+
 
 
@@ -178,9 +178,9 @@ HTML report is unavailable in plain text report export.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; divisorGenerico:divisor|tick ; -7.394 ; -7.394        ;
-; KEY[1]                       ; -4.970 ; -4.970        ;
-; KEY[2]                       ; -4.698 ; -4.698        ;
+; divisorGenerico:divisor|tick ; -7.278 ; -14.553       ;
+; KEY[2]                       ; -4.627 ; -9.242        ;
+; KEY[1]                       ; -4.401 ; -8.796        ;
 +------------------------------+--------+---------------+
 
 
@@ -189,9 +189,9 @@ HTML report is unavailable in plain text report export.
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; KEY[1]                       ; 1.094 ; 0.000         ;
-; KEY[2]                       ; 1.383 ; 0.000         ;
-; divisorGenerico:divisor|tick ; 3.972 ; 0.000         ;
+; KEY[1]                       ; 1.223 ; 0.000         ;
+; KEY[2]                       ; 1.327 ; 0.000         ;
+; divisorGenerico:divisor|tick ; 4.365 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -200,11 +200,11 @@ HTML report is unavailable in plain text report export.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLOCK_50                     ; -2.636 ; -653.625      ;
-; driverVGA:VGA|pixel_clk      ; -2.636 ; -98.219       ;
-; KEY[2]                       ; -0.538 ; -0.900        ;
-; divisorGenerico:divisor|tick ; -0.538 ; -0.864        ;
-; KEY[1]                       ; -0.538 ; -0.863        ;
+; CLOCK_50                     ; -2.636 ; -653.346      ;
+; driverVGA:VGA|pixel_clk      ; -2.636 ; -101.813      ;
+; KEY[2]                       ; -0.538 ; -1.814        ;
+; KEY[1]                       ; -0.538 ; -1.728        ;
+; divisorGenerico:divisor|tick ; -0.538 ; -1.678        ;
 +------------------------------+--------+---------------+
 
 
@@ -219,20 +219,20 @@ No synchronizer chains to report.
 +------------+-----------------+-------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name              ; Note ;
 +------------+-----------------+-------------------------+------+
-; 95.9 MHz   ; 95.9 MHz        ; CLOCK_50                ;      ;
-; 104.22 MHz ; 104.22 MHz      ; driverVGA:VGA|pixel_clk ;      ;
+; 86.89 MHz  ; 86.89 MHz       ; CLOCK_50                ;      ;
+; 100.38 MHz ; 100.38 MHz      ; driverVGA:VGA|pixel_clk ;      ;
 +------------+-----------------+-------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+--------------------------------------------------+
-; Slow 1100mV 0C Model Setup Summary               ;
-+-------------------------+--------+---------------+
-; Clock                   ; Slack  ; End Point TNS ;
-+-------------------------+--------+---------------+
-; CLOCK_50                ; -9.427 ; -4744.214     ;
-; driverVGA:VGA|pixel_clk ; -8.595 ; -406.317      ;
-+-------------------------+--------+---------------+
++---------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                ;
++-------------------------+---------+---------------+
+; Clock                   ; Slack   ; End Point TNS ;
++-------------------------+---------+---------------+
+; CLOCK_50                ; -10.509 ; -4767.842     ;
+; driverVGA:VGA|pixel_clk ; -8.962  ; -426.306      ;
++-------------------------+---------+---------------+
 
 
 +-------------------------------------------------+
@@ -240,8 +240,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------+-------+---------------+
 ; Clock                   ; Slack ; End Point TNS ;
 +-------------------------+-------+---------------+
-; driverVGA:VGA|pixel_clk ; 0.378 ; 0.000         ;
-; CLOCK_50                ; 0.398 ; 0.000         ;
+; CLOCK_50                ; 0.185 ; 0.000         ;
+; driverVGA:VGA|pixel_clk ; 0.418 ; 0.000         ;
 +-------------------------+-------+---------------+
 
 
@@ -250,9 +250,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; divisorGenerico:divisor|tick ; -7.612 ; -7.612        ;
-; KEY[1]                       ; -5.120 ; -5.120        ;
-; KEY[2]                       ; -4.917 ; -4.917        ;
+; divisorGenerico:divisor|tick ; -7.539 ; -15.075       ;
+; KEY[2]                       ; -4.882 ; -9.749        ;
+; KEY[1]                       ; -4.596 ; -9.185        ;
 +------------------------------+--------+---------------+
 
 
@@ -261,9 +261,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; KEY[1]                       ; 1.267 ; 0.000         ;
-; KEY[2]                       ; 1.445 ; 0.000         ;
-; divisorGenerico:divisor|tick ; 4.103 ; 0.000         ;
+; KEY[1]                       ; 1.381 ; 0.000         ;
+; KEY[2]                       ; 1.458 ; 0.000         ;
+; divisorGenerico:divisor|tick ; 4.423 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -272,11 +272,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLOCK_50                     ; -2.636 ; -587.044      ;
-; driverVGA:VGA|pixel_clk      ; -2.636 ; -97.291       ;
-; KEY[1]                       ; -0.538 ; -0.905        ;
-; KEY[2]                       ; -0.538 ; -0.892        ;
-; divisorGenerico:divisor|tick ; -0.538 ; -0.886        ;
+; CLOCK_50                     ; -2.636 ; -585.745      ;
+; driverVGA:VGA|pixel_clk      ; -2.636 ; -100.490      ;
+; KEY[2]                       ; -0.538 ; -1.833        ;
+; KEY[1]                       ; -0.538 ; -1.794        ;
+; divisorGenerico:divisor|tick ; -0.538 ; -1.658        ;
 +------------------------------+--------+---------------+
 
 
@@ -291,19 +291,19 @@ No synchronizer chains to report.
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; CLOCK_50                ; -4.692 ; -2268.324     ;
-; driverVGA:VGA|pixel_clk ; -3.978 ; -183.051      ;
+; CLOCK_50                ; -4.746 ; -2265.209     ;
+; driverVGA:VGA|pixel_clk ; -4.051 ; -189.542      ;
 +-------------------------+--------+---------------+
 
 
-+-------------------------------------------------+
-; Fast 1100mV 85C Model Hold Summary              ;
-+-------------------------+-------+---------------+
-; Clock                   ; Slack ; End Point TNS ;
-+-------------------------+-------+---------------+
-; driverVGA:VGA|pixel_clk ; 0.145 ; 0.000         ;
-; CLOCK_50                ; 0.201 ; 0.000         ;
-+-------------------------+-------+---------------+
++--------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary               ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; CLOCK_50                ; -0.039 ; -0.047        ;
+; driverVGA:VGA|pixel_clk ; 0.149  ; 0.000         ;
++-------------------------+--------+---------------+
 
 
 +-------------------------------------------------------+
@@ -311,9 +311,9 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; divisorGenerico:divisor|tick ; -3.301 ; -3.301        ;
-; KEY[1]                       ; -1.984 ; -1.984        ;
-; KEY[2]                       ; -1.732 ; -1.732        ;
+; divisorGenerico:divisor|tick ; -3.327 ; -6.653        ;
+; KEY[2]                       ; -1.857 ; -3.709        ;
+; KEY[1]                       ; -1.794 ; -3.586        ;
 +------------------------------+--------+---------------+
 
 
@@ -322,9 +322,9 @@ No synchronizer chains to report.
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; KEY[2]                       ; 0.250 ; 0.000         ;
-; KEY[1]                       ; 0.260 ; 0.000         ;
-; divisorGenerico:divisor|tick ; 1.746 ; 0.000         ;
+; KEY[1]                       ; 0.305 ; 0.000         ;
+; KEY[2]                       ; 0.349 ; 0.000         ;
+; divisorGenerico:divisor|tick ; 1.977 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -333,11 +333,11 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLOCK_50                     ; -2.174 ; -356.435      ;
-; driverVGA:VGA|pixel_clk      ; -2.174 ; -34.107       ;
-; KEY[2]                       ; -0.500 ; -1.482        ;
-; KEY[1]                       ; -0.417 ; -1.226        ;
-; divisorGenerico:divisor|tick ; -0.033 ; -0.033        ;
+; CLOCK_50                     ; -2.174 ; -357.185      ;
+; driverVGA:VGA|pixel_clk      ; -2.174 ; -34.560       ;
+; KEY[2]                       ; -0.460 ; -1.975        ;
+; KEY[1]                       ; -0.429 ; -1.788        ;
+; divisorGenerico:divisor|tick ; 0.016  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
@@ -352,19 +352,19 @@ No synchronizer chains to report.
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; CLOCK_50                ; -4.101 ; -1981.621     ;
-; driverVGA:VGA|pixel_clk ; -3.663 ; -162.941      ;
+; CLOCK_50                ; -4.223 ; -1996.791     ;
+; driverVGA:VGA|pixel_clk ; -3.765 ; -169.410      ;
 +-------------------------+--------+---------------+
 
 
-+-------------------------------------------------+
-; Fast 1100mV 0C Model Hold Summary               ;
-+-------------------------+-------+---------------+
-; Clock                   ; Slack ; End Point TNS ;
-+-------------------------+-------+---------------+
-; CLOCK_50                ; 0.086 ; 0.000         ;
-; driverVGA:VGA|pixel_clk ; 0.118 ; 0.000         ;
-+-------------------------+-------+---------------+
++--------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; CLOCK_50                ; -0.166 ; -0.628        ;
+; driverVGA:VGA|pixel_clk ; 0.122  ; 0.000         ;
++-------------------------+--------+---------------+
 
 
 +-------------------------------------------------------+
@@ -372,9 +372,9 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; divisorGenerico:divisor|tick ; -3.075 ; -3.075        ;
-; KEY[1]                       ; -1.765 ; -1.765        ;
-; KEY[2]                       ; -1.526 ; -1.526        ;
+; divisorGenerico:divisor|tick ; -3.081 ; -6.161        ;
+; KEY[2]                       ; -1.648 ; -3.292        ;
+; KEY[1]                       ; -1.554 ; -3.106        ;
 +------------------------------+--------+---------------+
 
 
@@ -383,9 +383,9 @@ No synchronizer chains to report.
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; KEY[1]                       ; 0.216 ; 0.000         ;
-; KEY[2]                       ; 0.225 ; 0.000         ;
-; divisorGenerico:divisor|tick ; 1.676 ; 0.000         ;
+; KEY[1]                       ; 0.223 ; 0.000         ;
+; KEY[2]                       ; 0.304 ; 0.000         ;
+; divisorGenerico:divisor|tick ; 1.882 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -394,11 +394,11 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLOCK_50                     ; -2.174 ; -415.447      ;
-; driverVGA:VGA|pixel_clk      ; -2.174 ; -33.990       ;
-; KEY[2]                       ; -0.545 ; -1.664        ;
-; KEY[1]                       ; -0.479 ; -1.476        ;
-; divisorGenerico:divisor|tick ; -0.012 ; -0.012        ;
+; CLOCK_50                     ; -2.174 ; -415.296      ;
+; driverVGA:VGA|pixel_clk      ; -2.174 ; -34.001       ;
+; KEY[2]                       ; -0.519 ; -2.307        ;
+; KEY[1]                       ; -0.492 ; -2.158        ;
+; divisorGenerico:divisor|tick ; 0.034  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
@@ -408,24 +408,24 @@ No synchronizer chains to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                          ;
-+-------------------------------+-----------+-------+----------+---------+---------------------+
-; Clock                         ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------------------+-----------+-------+----------+---------+---------------------+
-; Worst-case Slack              ; -9.471    ; 0.086 ; -7.612   ; 0.216   ; -2.636              ;
-;  CLOCK_50                     ; -9.471    ; 0.086 ; N/A      ; N/A     ; -2.636              ;
-;  KEY[1]                       ; N/A       ; N/A   ; -5.120   ; 0.216   ; -0.538              ;
-;  KEY[2]                       ; N/A       ; N/A   ; -4.917   ; 0.225   ; -0.545              ;
-;  divisorGenerico:divisor|tick ; N/A       ; N/A   ; -7.612   ; 1.676   ; -0.538              ;
-;  driverVGA:VGA|pixel_clk      ; -8.595    ; 0.118 ; N/A      ; N/A     ; -2.636              ;
-; Design-wide TNS               ; -5275.531 ; 0.0   ; -17.649  ; 0.0     ; -754.471            ;
-;  CLOCK_50                     ; -4869.331 ; 0.000 ; N/A      ; N/A     ; -653.625            ;
-;  KEY[1]                       ; N/A       ; N/A   ; -5.120   ; 0.000   ; -1.476              ;
-;  KEY[2]                       ; N/A       ; N/A   ; -4.917   ; 0.000   ; -1.664              ;
-;  divisorGenerico:divisor|tick ; N/A       ; N/A   ; -7.612   ; 0.000   ; -0.886              ;
-;  driverVGA:VGA|pixel_clk      ; -406.317  ; 0.000 ; N/A      ; N/A     ; -98.219             ;
-+-------------------------------+-----------+-------+----------+---------+---------------------+
++-----------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                           ;
++-------------------------------+-----------+--------+----------+---------+---------------------+
+; Clock                         ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------------+-----------+--------+----------+---------+---------------------+
+; Worst-case Slack              ; -10.509   ; -0.166 ; -7.539   ; 0.223   ; -2.636              ;
+;  CLOCK_50                     ; -10.509   ; -0.166 ; N/A      ; N/A     ; -2.636              ;
+;  KEY[1]                       ; N/A       ; N/A    ; -4.596   ; 0.223   ; -0.538              ;
+;  KEY[2]                       ; N/A       ; N/A    ; -4.882   ; 0.304   ; -0.538              ;
+;  divisorGenerico:divisor|tick ; N/A       ; N/A    ; -7.539   ; 1.882   ; -0.538              ;
+;  driverVGA:VGA|pixel_clk      ; -8.962    ; 0.122  ; N/A      ; N/A     ; -2.636              ;
+; Design-wide TNS               ; -5302.458 ; -0.628 ; -34.009  ; 0.0     ; -760.379            ;
+;  CLOCK_50                     ; -4874.252 ; -0.628 ; N/A      ; N/A     ; -653.346            ;
+;  KEY[1]                       ; N/A       ; N/A    ; -9.185   ; 0.000   ; -2.158              ;
+;  KEY[2]                       ; N/A       ; N/A    ; -9.749   ; 0.000   ; -2.307              ;
+;  divisorGenerico:divisor|tick ; N/A       ; N/A    ; -15.075  ; 0.000   ; -1.678              ;
+;  driverVGA:VGA|pixel_clk      ; -428.206  ; 0.000  ; N/A      ; N/A     ; -101.813            ;
++-------------------------------+-----------+--------+----------+---------+---------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -827,12 +827,12 @@ No synchronizer chains to report.
 +------------------------------+-------------------------+----------+----------+----------+----------+
 ; From Clock                   ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------+-------------------------+----------+----------+----------+----------+
-; CLOCK_50                     ; CLOCK_50                ; 1189531  ; 0        ; 0        ; 0        ;
+; CLOCK_50                     ; CLOCK_50                ; 1166823  ; 0        ; 0        ; 0        ;
 ; divisorGenerico:divisor|tick ; CLOCK_50                ; 46       ; 1        ; 0        ; 0        ;
 ; driverVGA:VGA|pixel_clk      ; CLOCK_50                ; 1        ; 1        ; 0        ; 0        ;
 ; KEY[1]                       ; CLOCK_50                ; 1        ; 46       ; 0        ; 0        ;
 ; KEY[2]                       ; CLOCK_50                ; 1        ; 46       ; 0        ; 0        ;
-; driverVGA:VGA|pixel_clk      ; driverVGA:VGA|pixel_clk ; 40994    ; 0        ; 0        ; 0        ;
+; driverVGA:VGA|pixel_clk      ; driverVGA:VGA|pixel_clk ; 42033    ; 0        ; 0        ; 0        ;
 +------------------------------+-------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -842,12 +842,12 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------------+-------------------------+----------+----------+----------+----------+
 ; From Clock                   ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------+-------------------------+----------+----------+----------+----------+
-; CLOCK_50                     ; CLOCK_50                ; 1189531  ; 0        ; 0        ; 0        ;
+; CLOCK_50                     ; CLOCK_50                ; 1166823  ; 0        ; 0        ; 0        ;
 ; divisorGenerico:divisor|tick ; CLOCK_50                ; 46       ; 1        ; 0        ; 0        ;
 ; driverVGA:VGA|pixel_clk      ; CLOCK_50                ; 1        ; 1        ; 0        ; 0        ;
 ; KEY[1]                       ; CLOCK_50                ; 1        ; 46       ; 0        ; 0        ;
 ; KEY[2]                       ; CLOCK_50                ; 1        ; 46       ; 0        ; 0        ;
-; driverVGA:VGA|pixel_clk      ; driverVGA:VGA|pixel_clk ; 40994    ; 0        ; 0        ; 0        ;
+; driverVGA:VGA|pixel_clk      ; driverVGA:VGA|pixel_clk ; 42033    ; 0        ; 0        ; 0        ;
 +------------------------------+-------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -857,9 +857,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+------------------------------+----------+----------+----------+----------+
 ; From Clock ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------------------------+----------+----------+----------+----------+
-; CLOCK_50   ; divisorGenerico:divisor|tick ; 629      ; 0        ; 0        ; 0        ;
-; CLOCK_50   ; KEY[1]                       ; 0        ; 0        ; 629      ; 0        ;
-; CLOCK_50   ; KEY[2]                       ; 0        ; 0        ; 629      ; 0        ;
+; CLOCK_50   ; divisorGenerico:divisor|tick ; 1236     ; 0        ; 0        ; 0        ;
+; CLOCK_50   ; KEY[1]                       ; 0        ; 0        ; 1236     ; 0        ;
+; CLOCK_50   ; KEY[2]                       ; 0        ; 0        ; 1236     ; 0        ;
 +------------+------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -869,9 +869,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+------------------------------+----------+----------+----------+----------+
 ; From Clock ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------------------------+----------+----------+----------+----------+
-; CLOCK_50   ; divisorGenerico:divisor|tick ; 629      ; 0        ; 0        ; 0        ;
-; CLOCK_50   ; KEY[1]                       ; 0        ; 0        ; 629      ; 0        ;
-; CLOCK_50   ; KEY[2]                       ; 0        ; 0        ; 629      ; 0        ;
+; CLOCK_50   ; divisorGenerico:divisor|tick ; 1236     ; 0        ; 0        ; 0        ;
+; CLOCK_50   ; KEY[1]                       ; 0        ; 0        ; 1236     ; 0        ;
+; CLOCK_50   ; KEY[2]                       ; 0        ; 0        ; 1236     ; 0        ;
 +------------+------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1109,7 +1109,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Oct 25 18:03:30 2024
+    Info: Processing started: Fri Oct 25 18:16:52 2024
 Info: Command: quartus_sta relogio_vga -c relogio_vga
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1130,148 +1130,148 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.471
+Info (332146): Worst-case setup slack is -10.191
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.471           -4869.331 CLOCK_50 
-    Info (332119):    -8.375            -406.200 driverVGA:VGA|pixel_clk 
-Info (332146): Worst-case hold slack is 0.412
+    Info (332119):   -10.191           -4874.252 CLOCK_50 
+    Info (332119):    -8.710            -428.206 driverVGA:VGA|pixel_clk 
+Info (332146): Worst-case hold slack is 0.444
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.412               0.000 driverVGA:VGA|pixel_clk 
-    Info (332119):     0.443               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -7.394
+    Info (332119):     0.444               0.000 CLOCK_50 
+    Info (332119):     0.447               0.000 driverVGA:VGA|pixel_clk 
+Info (332146): Worst-case recovery slack is -7.278
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.394              -7.394 divisorGenerico:divisor|tick 
-    Info (332119):    -4.970              -4.970 KEY[1] 
-    Info (332119):    -4.698              -4.698 KEY[2] 
-Info (332146): Worst-case removal slack is 1.094
+    Info (332119):    -7.278             -14.553 divisorGenerico:divisor|tick 
+    Info (332119):    -4.627              -9.242 KEY[2] 
+    Info (332119):    -4.401              -8.796 KEY[1] 
+Info (332146): Worst-case removal slack is 1.223
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.094               0.000 KEY[1] 
-    Info (332119):     1.383               0.000 KEY[2] 
-    Info (332119):     3.972               0.000 divisorGenerico:divisor|tick 
+    Info (332119):     1.223               0.000 KEY[1] 
+    Info (332119):     1.327               0.000 KEY[2] 
+    Info (332119):     4.365               0.000 divisorGenerico:divisor|tick 
 Info (332146): Worst-case minimum pulse width slack is -2.636
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.636            -653.625 CLOCK_50 
-    Info (332119):    -2.636             -98.219 driverVGA:VGA|pixel_clk 
-    Info (332119):    -0.538              -0.900 KEY[2] 
-    Info (332119):    -0.538              -0.864 divisorGenerico:divisor|tick 
-    Info (332119):    -0.538              -0.863 KEY[1] 
+    Info (332119):    -2.636            -653.346 CLOCK_50 
+    Info (332119):    -2.636            -101.813 driverVGA:VGA|pixel_clk 
+    Info (332119):    -0.538              -1.814 KEY[2] 
+    Info (332119):    -0.538              -1.728 KEY[1] 
+    Info (332119):    -0.538              -1.678 divisorGenerico:divisor|tick 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.427
+Info (332146): Worst-case setup slack is -10.509
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.427           -4744.214 CLOCK_50 
-    Info (332119):    -8.595            -406.317 driverVGA:VGA|pixel_clk 
-Info (332146): Worst-case hold slack is 0.378
+    Info (332119):   -10.509           -4767.842 CLOCK_50 
+    Info (332119):    -8.962            -426.306 driverVGA:VGA|pixel_clk 
+Info (332146): Worst-case hold slack is 0.185
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.378               0.000 driverVGA:VGA|pixel_clk 
-    Info (332119):     0.398               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -7.612
+    Info (332119):     0.185               0.000 CLOCK_50 
+    Info (332119):     0.418               0.000 driverVGA:VGA|pixel_clk 
+Info (332146): Worst-case recovery slack is -7.539
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.612              -7.612 divisorGenerico:divisor|tick 
-    Info (332119):    -5.120              -5.120 KEY[1] 
-    Info (332119):    -4.917              -4.917 KEY[2] 
-Info (332146): Worst-case removal slack is 1.267
+    Info (332119):    -7.539             -15.075 divisorGenerico:divisor|tick 
+    Info (332119):    -4.882              -9.749 KEY[2] 
+    Info (332119):    -4.596              -9.185 KEY[1] 
+Info (332146): Worst-case removal slack is 1.381
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.267               0.000 KEY[1] 
-    Info (332119):     1.445               0.000 KEY[2] 
-    Info (332119):     4.103               0.000 divisorGenerico:divisor|tick 
+    Info (332119):     1.381               0.000 KEY[1] 
+    Info (332119):     1.458               0.000 KEY[2] 
+    Info (332119):     4.423               0.000 divisorGenerico:divisor|tick 
 Info (332146): Worst-case minimum pulse width slack is -2.636
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.636            -587.044 CLOCK_50 
-    Info (332119):    -2.636             -97.291 driverVGA:VGA|pixel_clk 
-    Info (332119):    -0.538              -0.905 KEY[1] 
-    Info (332119):    -0.538              -0.892 KEY[2] 
-    Info (332119):    -0.538              -0.886 divisorGenerico:divisor|tick 
+    Info (332119):    -2.636            -585.745 CLOCK_50 
+    Info (332119):    -2.636            -100.490 driverVGA:VGA|pixel_clk 
+    Info (332119):    -0.538              -1.833 KEY[2] 
+    Info (332119):    -0.538              -1.794 KEY[1] 
+    Info (332119):    -0.538              -1.658 divisorGenerico:divisor|tick 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.692
+Info (332146): Worst-case setup slack is -4.746
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.692           -2268.324 CLOCK_50 
-    Info (332119):    -3.978            -183.051 driverVGA:VGA|pixel_clk 
-Info (332146): Worst-case hold slack is 0.145
+    Info (332119):    -4.746           -2265.209 CLOCK_50 
+    Info (332119):    -4.051            -189.542 driverVGA:VGA|pixel_clk 
+Info (332146): Worst-case hold slack is -0.039
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.145               0.000 driverVGA:VGA|pixel_clk 
-    Info (332119):     0.201               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -3.301
+    Info (332119):    -0.039              -0.047 CLOCK_50 
+    Info (332119):     0.149               0.000 driverVGA:VGA|pixel_clk 
+Info (332146): Worst-case recovery slack is -3.327
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.301              -3.301 divisorGenerico:divisor|tick 
-    Info (332119):    -1.984              -1.984 KEY[1] 
-    Info (332119):    -1.732              -1.732 KEY[2] 
-Info (332146): Worst-case removal slack is 0.250
+    Info (332119):    -3.327              -6.653 divisorGenerico:divisor|tick 
+    Info (332119):    -1.857              -3.709 KEY[2] 
+    Info (332119):    -1.794              -3.586 KEY[1] 
+Info (332146): Worst-case removal slack is 0.305
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.250               0.000 KEY[2] 
-    Info (332119):     0.260               0.000 KEY[1] 
-    Info (332119):     1.746               0.000 divisorGenerico:divisor|tick 
+    Info (332119):     0.305               0.000 KEY[1] 
+    Info (332119):     0.349               0.000 KEY[2] 
+    Info (332119):     1.977               0.000 divisorGenerico:divisor|tick 
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174            -356.435 CLOCK_50 
-    Info (332119):    -2.174             -34.107 driverVGA:VGA|pixel_clk 
-    Info (332119):    -0.500              -1.482 KEY[2] 
-    Info (332119):    -0.417              -1.226 KEY[1] 
-    Info (332119):    -0.033              -0.033 divisorGenerico:divisor|tick 
+    Info (332119):    -2.174            -357.185 CLOCK_50 
+    Info (332119):    -2.174             -34.560 driverVGA:VGA|pixel_clk 
+    Info (332119):    -0.460              -1.975 KEY[2] 
+    Info (332119):    -0.429              -1.788 KEY[1] 
+    Info (332119):     0.016               0.000 divisorGenerico:divisor|tick 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.101
+Info (332146): Worst-case setup slack is -4.223
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.101           -1981.621 CLOCK_50 
-    Info (332119):    -3.663            -162.941 driverVGA:VGA|pixel_clk 
-Info (332146): Worst-case hold slack is 0.086
+    Info (332119):    -4.223           -1996.791 CLOCK_50 
+    Info (332119):    -3.765            -169.410 driverVGA:VGA|pixel_clk 
+Info (332146): Worst-case hold slack is -0.166
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.086               0.000 CLOCK_50 
-    Info (332119):     0.118               0.000 driverVGA:VGA|pixel_clk 
-Info (332146): Worst-case recovery slack is -3.075
+    Info (332119):    -0.166              -0.628 CLOCK_50 
+    Info (332119):     0.122               0.000 driverVGA:VGA|pixel_clk 
+Info (332146): Worst-case recovery slack is -3.081
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.075              -3.075 divisorGenerico:divisor|tick 
-    Info (332119):    -1.765              -1.765 KEY[1] 
-    Info (332119):    -1.526              -1.526 KEY[2] 
-Info (332146): Worst-case removal slack is 0.216
+    Info (332119):    -3.081              -6.161 divisorGenerico:divisor|tick 
+    Info (332119):    -1.648              -3.292 KEY[2] 
+    Info (332119):    -1.554              -3.106 KEY[1] 
+Info (332146): Worst-case removal slack is 0.223
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.216               0.000 KEY[1] 
-    Info (332119):     0.225               0.000 KEY[2] 
-    Info (332119):     1.676               0.000 divisorGenerico:divisor|tick 
+    Info (332119):     0.223               0.000 KEY[1] 
+    Info (332119):     0.304               0.000 KEY[2] 
+    Info (332119):     1.882               0.000 divisorGenerico:divisor|tick 
 Info (332146): Worst-case minimum pulse width slack is -2.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.174            -415.447 CLOCK_50 
-    Info (332119):    -2.174             -33.990 driverVGA:VGA|pixel_clk 
-    Info (332119):    -0.545              -1.664 KEY[2] 
-    Info (332119):    -0.479              -1.476 KEY[1] 
-    Info (332119):    -0.012              -0.012 divisorGenerico:divisor|tick 
+    Info (332119):    -2.174            -415.296 CLOCK_50 
+    Info (332119):    -2.174             -34.001 driverVGA:VGA|pixel_clk 
+    Info (332119):    -0.519              -2.307 KEY[2] 
+    Info (332119):    -0.492              -2.158 KEY[1] 
+    Info (332119):     0.034               0.000 divisorGenerico:divisor|tick 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 921 megabytes
-    Info: Processing ended: Fri Oct 25 18:03:34 2024
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 917 megabytes
+    Info: Processing ended: Fri Oct 25 18:16:55 2024
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:07
 
 
