@@ -221,7 +221,7 @@ FPGA_RESET_TRI :  entity work.buffer_3_state_1porta
         port map(entrada => FPGA_RESET_N, habilita =>  habilita_FPGA_RESET, saida => DATA_IN(0)); 	
 
 divisor : entity work.divisorGenerico
-            generic map (divisor => 390625)   -- divide por 50M.
+            generic map (divisor => 25000000)   -- divide por 50M.
             port map (clk => CLK, saida_clk => saida_1sec);
 				
 DETECTORKEY0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_EDGE_KEY0);

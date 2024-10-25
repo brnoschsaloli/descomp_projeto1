@@ -106,7 +106,7 @@ LDI 14, R3     #COLUNA 14
 STA 384, R3   #ARMAZENA NO REGISTRADOR DAS COLUNAS
 LDI 2, R3     #LINHA 2
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
-LDI 1, R3    #T
+LDI 20, R3     #T
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 LDI 15, R3    #COLUNA 15
@@ -130,14 +130,14 @@ LDI 8, R3    #COLUNA 8
 STA 384, R3   #ARMAZENA NO REGISTRADOR DAS COLUNAS
 LDI 4, R3     #LINHA 4
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
-LDI 58, R3     #:
+LDI 58, R3     #dois pontos
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 LDI 11, R3    #COLUNA 11
 STA 384, R3   #ARMAZENA NO REGISTRADOR DAS COLUNAS
 LDI 4, R3     #LINHA 4
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
-LDI 58, R3     #:
+LDI 58, R3     #dois pontos
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 NOP
@@ -253,6 +253,7 @@ LDI 4, R3     #LINHA 4
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
 LDA 0, R3 		#Carrega o valor de MEM[0] (unidades)
 STA 288, R3 	#Armazena valor do acumulador de unidades no HEX0
+ADDi 48, R3   #ACERTA COM O VALOR NO DO NUMERO NO .MIF
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 NOP
@@ -262,6 +263,7 @@ LDI 4, R3     #LINHA 4
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
 LDA 1, R3 		#Carrega o valor de MEM[1] (dezenas)
 STA 289, R3 	#Armazena valor do acumulador de dezenas no HEX1
+ADDi 48, R3   #ACERTA COM O VALOR NO DO NUMERO NO .MIF
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 NOP
@@ -271,6 +273,7 @@ LDI 4, R3     #LINHA 4
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
 LDA 2, R3 		#Carrega o valor de MEM[2] (centenas)
 STA 290, R3 	#Armazena valor do acumulador de centenas no HEX2
+ADDi 48, R3   #ACERTA COM O VALOR NO DO NUMERO NO .MIF
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 NOP
@@ -280,6 +283,7 @@ LDI 4, R3     #LINHA 4
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
 LDA 6, R3 		#Carrega o valor de MEM[6] (milhares)
 STA 291, R3 	#Armazena valor do acumulador de unidades no HEX3
+ADDi 48, R3   #ACERTA COM O VALOR NO DO NUMERO NO .MIF
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 NOP
@@ -289,6 +293,7 @@ LDI 4, R3     #LINHA 4
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
 LDA 7, R3 		#Carrega o valor de MEM[7] (dezenas de milhares)
 STA 292, R3 	#Armazena valor do acumulador de dezenas no HEX4
+ADDi 48, R3   #ACERTA COM O VALOR NO DO NUMERO NO .MIF
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 NOP
@@ -298,6 +303,7 @@ LDI 4, R3     #LINHA 4
 STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
 LDA 8, R3 		#Carrega o valor de MEM[8] (centenas de milhares)
 STA 293, R3 	#Armazena valor do acumulador de centenas no HEX5
+ADDi 48, R3   #ACERTA COM O VALOR NO DO NUMERO NO .MIF
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 RET
@@ -434,8 +440,8 @@ SUBi 1, R0         # Subtrai 1 de MEM[1]
 STA 1, R0          # Armazena o novo valor de MEM[1]
 RET             # Retorna da sub-rotina
 VEMUM_C:
-LDI 9, R0          # Carrega 9 no acumulador
-STA 1, R0          # Define MEM[1] para 9
+LDI 5, R0          # Carrega 5 no acumulador
+STA 1, R0          # Define MEM[1] para 5
 LDA 2, R0          # Carrega MEM[2] (centenas) no acumulador
 CEQi 0, R0         # Verifica se MEM[2] == 0
 JEQ VEMUM_M    # Se MEM[2] == 0, realiza o próximo "empréstimo"
@@ -452,8 +458,8 @@ SUBi 1, R0         # Subtrai 1 de MEM[3]
 STA 6, R0          # Armazena o novo valor de MEM[3]
 RET             # Retorna da sub-rotina
 VEMUM_DM:
-LDI 9, R0          # Carrega 9 no acumulador
-STA 6, R0          # Define MEM[3] para 9
+LDI 5, R0          # Carrega 5 no acumulador
+STA 6, R0          # Define MEM[3] para 5
 LDA 7, R0          # Carrega MEM[4] (dezenas de milhares) no acumulador
 CEQi 0, R0         # Verifica se MEM[4] == 0
 JEQ VEMUM_CM   # Se MEM[4] == 0, realiza o próximo "empréstimo"
