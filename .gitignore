@@ -10,3 +10,7 @@ relogio/db/
 relogio/incremental_db/
 relogio/output_files/
 relogio/simulation/
+relogio_vga/db/
+relogio_vga/incremental_db/
+relogio_vga/output_files/
+relogio_vga/simulation/
