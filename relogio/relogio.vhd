@@ -248,10 +248,10 @@ DETECTORKEY1: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada 
 FF_KEY1 : entity work.flipFlop											 
           port map (DIN => '1', DOUT => KEY1, ENABLE => '1', CLK => saida_EDGE_KEY1, RST => limpaLeitura1);
 			 
-DETECTORKEY2: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(2)), saida => saida_EDGE_KEY2); 
+--DETECTORKEY2: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(2)), saida => saida_EDGE_KEY2); 
 
 FF_KEY2 : entity work.flipFlop											 
-          port map (DIN => '1', DOUT => KEY2, ENABLE => '1', CLK => saida_EDGE_KEY2, RST => limpaLeitura2);
+          port map (DIN => '1', DOUT => KEY2, ENABLE => '1', CLK => saida_mux_tempo, RST => limpaLeitura2);
 			 
 DETECTORKEY3: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(3)), saida => saida_EDGE_KEY3); 
 
