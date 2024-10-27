@@ -69,16 +69,16 @@ architecture arquitetura of relogio is
   signal habilita_HEX4 : std_logic;
   signal habilita_HEX5 : std_logic;
   signal habilita_SW7TO0 : std_logic;
-  signal habilita_SW8 : std_logic;
-  signal habilita_SW9 : std_logic;
+  signal habilita_SW8    : std_logic;
+  signal habilita_SW9    : std_logic;
   signal habilita_KEY0 : std_logic;
   signal habilita_KEY1 : std_logic;
   signal habilita_KEY2 : std_logic;
   signal habilita_KEY3 : std_logic;
   signal habilita_FPGA_RESET : std_logic;
-  signal saida_tempo_normal : std_logic;
+  signal saida_tempo_normal  : std_logic;
   signal saida_tempo_acelerado_minutos : std_logic;
-  signal saida_tempo_acelerado_horas : std_logic;
+  signal saida_tempo_acelerado_horas   : std_logic;
   signal saida_mux_tempo : std_logic;
   signal saida_EDGE_KEY0 : std_logic;
   signal saida_EDGE_KEY1 : std_logic;
@@ -92,6 +92,14 @@ architecture arquitetura of relogio is
   signal limpaLeitura1 : std_logic;
   signal limpaLeitura2 : std_logic;
   signal limpaLeitura3 : std_logic;
+  signal	saidaRegCol  : std_logic_vector(7 downto 0);
+  signal	saidaRegLin  : std_logic_vector(7 downto 0);
+  signal	saidaRegData : std_logic_vector(5 downto 0);
+  signal habilitaVGA     : std_logic;
+  signal habilitaColVGA  : std_logic;
+  signal habilitaLinVGA  : std_logic;
+  signal habilitaDataVGA : std_logic;
+  signal cor : std_logic_vector (1 downto 0);
   
   alias CLK : std_logic is CLOCK_50;
 begin
@@ -259,6 +267,16 @@ FF_KEY3 : entity work.flipFlop
           port map (DIN => '1', DOUT => KEY3, ENABLE => '1', CLK => saida_EDGE_KEY3, RST => limpaLeitura3);
 			 	 
 			 
+REG_VGA_COL : entity work.registradorGenerico   generic map (larguraDados => 8)
+				 port map (DIN => data_OUT, DOUT => saidaRegCol, ENABLE => habilitaColVGA, CLK => CLK, RST => '0');
+
+REG_VGA_LIN : entity work.registradorGenerico   generic map (larguraDados => 8)
+				 port map (DIN => data_OUT, DOUT => saidaRegLin, ENABLE => habilitaLinVGA, CLK => CLK, RST => '0');
+
+REG_VGA_DATA : entity work.registradorGenerico   generic map (larguraDados => 6)
+				 port map (DIN => data_OUT(5 downto 0), DOUT => saidaRegData, ENABLE => habilitaDataVGA, CLK => CLK, RST => '0');		 
+			 
+			 
 VGA : entity work.driverVGA
   port map (
     CLOCK_50  =>  CLK, -- DE0-CV -> CLOCK_50
@@ -267,13 +285,14 @@ VGA : entity work.driverVGA
     VGA_R     =>  VGA_R, -- DE0-CV -> VGA_R
     VGA_G     =>  VGA_G, -- DE0-CV -> VGA_G
     VGA_B     =>  VGA_B, -- DE0-CV -> VGA_B
-    posCol    =>  x"02", -- Posição da Coluna(X)
-    posLin    =>  x"02", -- Posição da Linha(Y)
-    dadoIN    =>  "00000001", -- Posição do carac. dentro do arquivo mapaDeCaracteres
-    VideoRAMWREnable => '1'
+    posCol    =>  saidaRegCol, -- Posição da Coluna(X)
+    posLin    =>  saidaRegLin, -- Posição da Linha(Y)
+    dadoIN    =>  cor & saidaRegData, -- Posição do carac. dentro do arquivo mapaDeCaracteres
+    VideoRAMWREnable => habilitaVGA
     );
 			  
- 
+cor <= "11"; -- branco padrao
+
 habilita_LEDR <= saida_Dec1(4) AND wr AND saida_Dec2(0) AND not(data_addr(5));
 habilita_LED8 <= saida_Dec1(4) AND wr AND saida_Dec2(1) AND not(data_addr(5));
 habilita_LED9 <= saida_Dec1(4) AND wr AND saida_Dec2(2) AND not(data_addr(5));
@@ -294,6 +313,12 @@ habilita_KEY1 <= saida_Dec1(5) AND rd AND saida_Dec2(1) AND data_addr(5);
 habilita_KEY2 <= saida_Dec1(5) AND rd AND saida_Dec2(2) AND data_addr(5);
 habilita_KEY3 <= saida_Dec1(5) AND rd AND saida_Dec2(3) AND data_addr(5);
 habilita_FPGA_RESET <= saida_Dec1(5) AND rd AND saida_Dec2(4) AND data_addr(5);
+
+
+habilitaColVGA  <= saida_Dec1(6) and saida_Dec2(0) and wr; --384
+habilitaLinVGA  <= saida_Dec1(6) and saida_Dec2(1) and wr; --385
+habilitaDataVGA <= saida_Dec1(6) and saida_Dec2(2) and wr; --386
+habilitaVGA     <= saida_Dec1(6) and saida_Dec2(3) and wr; --387
 
 LEDR(7 downto 0) <= saida_REG_LEDR;
 LEDR(8) <= saida_FF_LED8;

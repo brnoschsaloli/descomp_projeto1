@@ -260,7 +260,7 @@ VGA : entity work.driverVGA
     posCol    =>  saidaRegCol, -- Posição da Coluna(X)
     posLin    =>  saidaRegLin, -- Posição da Linha(Y)
     dadoIN    =>  "10" & saidaRegData, -- Posição do carac. dentro do arquivo mapaDeCaracteres
-    VideoRAMWREnable => '1'
+    VideoRAMWREnable => habilitaVGA
     );
 			 
 
