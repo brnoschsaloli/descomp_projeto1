@@ -76,16 +76,22 @@ architecture arquitetura of relogio is
   signal habilita_KEY2 : std_logic;
   signal habilita_KEY3 : std_logic;
   signal habilita_FPGA_RESET : std_logic;
-  signal saida_1sec : std_logic;
+  signal saida_tempo_normal : std_logic;
+  signal saida_tempo_acelerado_minutos : std_logic;
+  signal saida_tempo_acelerado_horas : std_logic;
+  signal saida_mux_tempo : std_logic;
   signal saida_EDGE_KEY0 : std_logic;
   signal saida_EDGE_KEY1 : std_logic;
   signal saida_EDGE_KEY2 : std_logic;
+  signal saida_EDGE_KEY3 : std_logic;
   signal KEY0 : std_logic;
   signal KEY1 : std_logic;
   signal KEY2 : std_logic;
+  signal KEY3 : std_logic;
   signal limpaLeitura0 : std_logic;
   signal limpaLeitura1 : std_logic;
   signal limpaLeitura2 : std_logic;
+  signal limpaLeitura3 : std_logic;
   
   alias CLK : std_logic is CLOCK_50;
 begin
@@ -208,19 +214,34 @@ KEY2_TRI :  entity work.buffer_3_state_1porta
         port map(entrada => KEY2, habilita =>  habilita_KEY2, saida => DATA_IN(0)); 
 		 
 KEY3_TRI :  entity work.buffer_3_state_1porta
-        port map(entrada => KEY(3), habilita =>  habilita_KEY3, saida => DATA_IN(0));
+        port map(entrada => KEY3, habilita =>  habilita_KEY3, saida => DATA_IN(0));
 		
 FPGA_RESET_TRI :  entity work.buffer_3_state_1porta
         port map(entrada => FPGA_RESET_N, habilita =>  habilita_FPGA_RESET, saida => DATA_IN(0)); 	
 
-divisor : entity work.divisorGenerico
-            generic map (divisor => 390625)   -- divide por 50M.
-            port map (clk => CLK, saida_clk => saida_1sec);
+DIVISOR : entity work.divisorGenerico
+            generic map (divisor => 25000000) -- divide por 50M.
+            port map (clk => CLK, saida_clk => saida_tempo_normal);
 				
-DETECTORKEY0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_EDGE_KEY0);
+DIVISOR2 : entity work.divisorGenerico
+            generic map (divisor => 390625) -- divide por 50M.
+            port map (clk => CLK, saida_clk => saida_tempo_acelerado_minutos);
+				
+DIVISOR3 : entity work.divisorGenerico
+            generic map (divisor => 6125)-- divide por 50M.
+            port map (clk => CLK, saida_clk => saida_tempo_acelerado_horas);
+				
+MUX_TEMPO:  entity work.mux3x1tempo
+        port map( entrada0_MUX => saida_tempo_normal,
+                 entrada1_MUX =>  saida_tempo_acelerado_minutos,
+					  entrada2_MUX =>  saida_tempo_acelerado_horas,
+                 seletor_MUX => SW(9) & SW(8),
+                 saida_MUX => saida_mux_tempo);
+				
+--DETECTORKEY0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_EDGE_KEY0);
 
 FF_KEY0 : entity work.flipFlop											 
-          port map (DIN => '1', DOUT => KEY0, ENABLE => '1', CLK => saida_1sec, RST => limpaLeitura0);
+          port map (DIN => '1', DOUT => KEY0, ENABLE => '1', CLK => saida_mux_tempo, RST => limpaLeitura0);
 			 
 DETECTORKEY1: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(1)), saida => saida_EDGE_KEY1);
 
@@ -232,8 +253,11 @@ DETECTORKEY2: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada 
 FF_KEY2 : entity work.flipFlop											 
           port map (DIN => '1', DOUT => KEY2, ENABLE => '1', CLK => saida_EDGE_KEY2, RST => limpaLeitura2);
 			 
-			 
-			 
+DETECTORKEY3: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(3)), saida => saida_EDGE_KEY3); 
+
+FF_KEY3 : entity work.flipFlop											 
+          port map (DIN => '1', DOUT => KEY3, ENABLE => '1', CLK => saida_EDGE_KEY3, RST => limpaLeitura3);
+			 	 
 			 
 VGA : entity work.driverVGA
   port map (
@@ -248,12 +272,7 @@ VGA : entity work.driverVGA
     dadoIN    =>  "00000001", -- Posição do carac. dentro do arquivo mapaDeCaracteres
     VideoRAMWREnable => '1'
     );
-			 
-			 
-			 
-			 
-			 
-			 
+			  
  
 habilita_LEDR <= saida_Dec1(4) AND wr AND saida_Dec2(0) AND not(data_addr(5));
 habilita_LED8 <= saida_Dec1(4) AND wr AND saida_Dec2(1) AND not(data_addr(5));
@@ -290,6 +309,7 @@ HEX5 <= saida_DEC_HEX5;
 limpaLeitura0 <= data_addr(0) and data_addr(1) and data_addr(2) and data_addr(3) and data_addr(4) and data_addr(5) and data_addr(6) and data_addr(7) and data_addr(8) and wr;
 limpaLeitura1 <= not(data_addr(0)) and data_addr(1) and data_addr(2) and data_addr(3) and data_addr(4) and data_addr(5) and data_addr(6) and data_addr(7) and data_addr(8) and wr;
 limpaLeitura2 <= data_addr(0) and not(data_addr(1)) and data_addr(2) and data_addr(3) and data_addr(4) and data_addr(5) and data_addr(6) and data_addr(7) and data_addr(8) and wr;
+limpaLeitura3 <= not(data_addr(0)) and not(data_addr(1)) and data_addr(2) and data_addr(3) and data_addr(4) and data_addr(5) and data_addr(6) and data_addr(7) and data_addr(8) and wr;
 
 
 end architecture;
