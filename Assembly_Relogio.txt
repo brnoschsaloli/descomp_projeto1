@@ -371,56 +371,56 @@ DECREMENTO:
 LDI 0, R0		#Carrega 0 para o registrador
 STA 257, R0		#Armazena o valor do bit0 do registrador no LDR8
 STA 509, R0		#Limpa a leitura do botão KEY2
-LDA 0, R0         	#Carrega MEM[0] (unidades) no registrador
-CEQi 0, R0       	#Verifica se MEM[0] == 0
-JEQ VEMUM_D   	 	#Se MEM[0] == 0, realiza o "empréstimo"  
+LDA 30, R0         	#Carrega MEM[30] (unidades decremento) no registrador
+CEQi 0, R0       	#Verifica se MEM[30] == 0
+JEQ VEMUM_D   	 	#Se MEM[30] == 0, realiza o "empréstimo"  
 SUBi 1, R0        	#Subtrai 1 de MEM[0]
-STA 0, R0          	#Armazena o novo valor de MEM[0]
+STA 30, R0          	#Armazena o novo valor de MEM[30]
 RET             	#Retorna da sub-rotina
 VEMUM_D:
 LDI 9, R0          	#Carrega 9 no registrador
-STA 0, R0          	#Define MEM[0] para 9
-LDA 1, R0          	#Carrega MEM[1] (dezenas) no registrador
+STA 30, R0          	#Define MEM[30] para 9
+LDA 31, R0          	#Carrega MEM[31] (dezenas decremento) no registrador
 CEQi 0, R0         	#Verifica se MEM[1] == 0
-JEQ VEMUM_C    		#Se MEM[1] == 0, realiza o próximo "empréstimo"
+JEQ VEMUM_C    		#Se MEM[31] == 0, realiza o próximo "empréstimo"
 SUBi 1, R0         	#Subtrai 1 de MEM[1]
-STA 1, R0          	#Armazena o novo valor de MEM[1]
+STA 31, R0          	#Armazena o novo valor de MEM[31]
 RET             	#Retorna da sub-rotina
 VEMUM_C:
 LDI 5, R0          	#Carrega 5 no registrador
-STA 1, R0          	#Define MEM[1] para 5
-LDA 2, R0          	#Carrega MEM[2] (centenas) no registrador
+STA 31, R0          	#Define MEM[31] para 5
+LDA 32, R0          	#Carrega MEM[32] (centenas decremento) no registrador
 CEQi 0, R0         	#Verifica se MEM[2] == 0
-JEQ VEMUM_M    		#Se MEM[2] == 0, realiza o próximo "empréstimo"
+JEQ VEMUM_M    		#Se MEM[32] == 0, realiza o próximo "empréstimo"
 SUBi 1, R0         	#Subtrai 1 de MEM[2]
-STA 2, R0          	#Armazena o novo valor de MEM[2]
+STA 32, R0          	#Armazena o novo valor de MEM[32]
 RET             	#Retorna da sub-rotina
 VEMUM_M:
 LDI 9, R0          	#Carrega 9 no registrador
-STA 2, R0          	#Define MEM[2] para 9
-LDA 6, R0          	#Carrega MEM[3] (milhares) no registrador
-CEQi 0, R0        	#Verifica se MEM[3] == 0
-JEQ VEMUM_DM   		#Se MEM[3] == 0, realiza o próximo "empréstimo"
-SUBi 1, R0         	#Subtrai 1 de MEM[3]
-STA 6, R0          	#Armazena o novo valor de MEM[3]
+STA 32, R0          	#Define MEM[32] para 9
+LDA 33, R0          	#Carrega MEM[33] (milhares decremento) no registrador
+CEQi 0, R0        	#Verifica se MEM[33] == 0
+JEQ VEMUM_DM   		#Se MEM[33] == 0, realiza o próximo "empréstimo"
+SUBi 1, R0         	#Subtrai 1 de MEM[33]
+STA 33, R0          	#Armazena o novo valor de MEM[33]
 RET             	#Retorna da sub-rotina
 VEMUM_DM:
 LDI 5, R0          	#Carrega 5 no registrador
-STA 6, R0         	#Define MEM[3] para 5
-LDA 7, R0          	#Carrega MEM[4] (dezenas de milhares) no registrador
-CEQi 0, R0         	#Verifica se MEM[4] == 0
-JEQ VEMUM_CM   		#Se MEM[4] == 0, realiza o próximo "empréstimo"
-SUBi 1, R0         	#Subtrai 1 de MEM[4]
-STA 7, R0          	#Armazena o novo valor de MEM[4]
+STA 33, R0         	#Define MEM[33] para 5
+LDA 34, R0          	#Carrega MEM[34] (dezenas de milhares decremento) no registrador
+CEQi 0, R0         	#Verifica se MEM[34] == 0
+JEQ VEMUM_CM   		#Se MEM[34] == 0, realiza o próximo "empréstimo"
+SUBi 1, R0         	#Subtrai 1 de MEM[34]
+STA 34, R0          	#Armazena o novo valor de MEM[34]
 RET             	#Retorna da sub-rotina
 VEMUM_CM:
 LDI 9, R0          	#Carrega 9 no registrador
-STA 7, R0          	#Define MEM[4] para 9
-LDA 8, R0          	#Carrega MEM[5] (centenas de milhares) no registrador
-CEQi 0, R0         	#Verifica se MEM[5] == 0
+STA 34, R0          	#Define MEM[34] para 9
+LDA 35, R0          	#Carrega MEM[35] (centenas de milhares decremento) no registrador
+CEQi 0, R0         	#Verifica se MEM[35] == 0
 JEQ ZERA_HEX		#Zera se for igual a 0
-SUBi 1, R0         	#Subtrai 1 de MEM[5]
-STA 8, R0          	#Armazena o novo valor de MEM[5]
+SUBi 1, R0         	#Subtrai 1 de MEM[35]
+STA 35, R0          	#Armazena o novo valor de MEM[35]
 RET             	#Retorna da sub-rotina
 ZERA_HEX:
 LDI 0, R0		#Carrega o registrador com o valor 0
@@ -446,7 +446,7 @@ RET
 TEMPORIZADOR:
 STA 508, R0		#Limpa a leitura do botão tres
 LDA 320, R0		#Carrega o registrador com a leitura do SW7TO0
-STA 0, R0		#Armazena o valor do registrador em MEM[0] (unidade)
+STA 30, R0		#Armazena o valor do registrador em MEM[30] (unidade decremento)
 LDI 4, R0		#Carrega o registrador com o valor 4
 STA 256, R0		#Armazena o valor do bit0 do registrador no LDR0 ~ LEDR7
 AGUARDA_DT:
@@ -456,7 +456,7 @@ CEQi 0, R0		#Compara com constante 0
 JEQ AGUARDA_DT		#Desvia se igual a 0 (botão não foi pressionado)
 STA 508, R0		#Limpa a leitura do botão tres
 LDA 320, R0		#Carrega o registrador com a leitura do SW7TO0
-STA 1, R0		#Armazena o valor do registrador em MEM[1] (dezena)
+STA 31, R0		#Armazena o valor do registrador em MEM[31] (dezena decremento)
 LDI 16, R0		#Carrega o registrador com o valor 16
 STA 256, R0		#Armazena o valor do bit0 do registrador no LDR0 ~ LEDR7
 AGUARDA_CT:
@@ -466,7 +466,7 @@ CEQi 0, R0		#Compara com constante 0
 JEQ AGUARDA_CT		#Desvia se igual a 0 (botão não foi pressionado)
 STA 508, R0		#Limpa a leitura do botão tres
 LDA 320, R0		#Carrega o registrador com a leitura do SW7TO0
-STA 2, R0		#Armazena o valor do registrador em MEM[2] (centena)
+STA 32, R0		#Armazena o valor do registrador em MEM[32] (centena decremento)
 LDI 32, R0		#Carrega o registrador com o valor 32
 STA 256, R0		#Armazena o valor do bit0 do registrador no LDR0 ~ LEDR7
 AGUARDA_MT:
@@ -476,7 +476,7 @@ CEQi 0, R0		#Compara com constante 0
 JEQ AGUARDA_MT		#Desvia se igual a 0 (botão não foi pressionado)
 STA 508, R0		#Limpa a leitura do botão tres
 LDA 320, R0		#Carrega o registrador com a leitura do SW7TO0
-STA 6, R0		#Armazena o valor do registrador em MEM[13] (inibir milhar)
+STA 33, R0		#Armazena o valor do registrador em MEM[33] (unidade de milhar decremento)
 LDI 128, R0		#Carrega o registrador com o valor 128
 STA 256, R0		#Armazena o valor do bit0 do registrador no LDR0 ~ LEDR7
 AGUARDA_DMT:
@@ -486,7 +486,7 @@ CEQi 0, R0		#Compara com constante 0
 JEQ AGUARDA_DMT		#Desvia se igual a 0 (botão não foi pressionado)
 STA 508, R0		#Limpa a leitura do botão tres
 LDA 320, R0		#Carrega o registrador com a leitura do SW7TO0
-STA 7, R0		#Armazena o valor do registrador em MEM[7] (dezena de milhar)
+STA 34, R0		#Armazena o valor do registrador em MEM[34] (dezena de milhar decremento)
 LDI 0, R0		#Carrega o registrador com o valor 0
 STA 256, R0		#Armazena o valor do bit0 do registrador no LDR0 ~ LEDR7
 LDI 1, R0		#Carrega o registrador com o valor 1
@@ -498,7 +498,7 @@ CEQi 0, R0		#Compara com constante 0
 JEQ AGUARDA_CMT		#Desvia se igual a 0 (botão não foi pressionado)
 STA 508, R0		#Limpa a leitura do botão tres
 LDA 320, R0		#Carrega o registrador com a leitura do SW7TO0
-STA 8, R0		#Armazena o valor do registrador em MEM[8] (centena de milhar)
+STA 35, R0		#Armazena o valor do registrador em MEM[35] (centena de milhar decremento)
 LDI 0, R0		#Carrega o registrador com o valor 0
 STA 258, R0		#Armazena o valor do bit0 do registrador no LDR9
 LDI 1, R0		#Carrega o registrador com o valor 1
