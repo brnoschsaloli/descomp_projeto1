@@ -79,6 +79,8 @@ LDA 355, R0	    	#Carrega o registrador com a leitura do botão KEY3
 ANDi 1, R0		#Utiliza a máscara b0000_0001 para limpar todos os bits menos o bit 0
 CEQi 0, R0		#Compara com constante 0
 JEQ NAO_CLICOU2		#Desvia se igual a 0 (botão não foi pressionado)
+LDA 1, R0
+STA 258, R0		#Armazena o valor do bit0 do registrador no LDR9
 JSR TEMPORIZADOR	#O botão foi pressionado, chama a sub-rotina de temporizador
 NAO_CLICOU2:
 NOP    			#Retorno da sub-rotina de temporizador
@@ -305,7 +307,7 @@ STA 385, R3   #ARMAZENA NO REGISTRADOR DAS LINHAS
 LDI 0, R3     #zera o sino
 STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
-LDI 0, R0		#Carrega o registrador com o valor 1
+LDI 0, R0		#Carrega o registrador com o valor 0
 STA 257, R0		#Armazena o valor do bit0 do registrador no LDR8
 STA 510, R0		#Limpa a leitura do botão um
 LDA 320, R0		#Carrega o registrador com a leitura do SW7TO0
@@ -416,12 +418,13 @@ LDI 9, R0          	#Carrega 9 no registrador
 STA 7, R0          	#Define MEM[4] para 9
 LDA 8, R0          	#Carrega MEM[5] (centenas de milhares) no registrador
 CEQi 0, R0         	#Verifica se MEM[5] == 0
-JEQ ZERA_HEX		#Zera se for menos que 0
+JEQ ZERA_HEX		#Zera se for igual a 0
 SUBi 1, R0         	#Subtrai 1 de MEM[5]
 STA 8, R0          	#Armazena o novo valor de MEM[5]
 RET             	#Retorna da sub-rotina
 ZERA_HEX:
 LDI 0, R0		#Carrega o registrador com o valor 0
+STA 258, R0		#Armazena o valor do bit0 do registrador no LDR9
 STA 0, R0	 	#Armazena o valor do registrador na MEM[0] (unidades)
 STA 1, R0	 	#Armazena o valor do registrador na MEM[1] (dezenas)
 STA 2, R0	 	#Armazena o valor do registrador na MEM[2] (centenas)
