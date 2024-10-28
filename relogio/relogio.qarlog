@@ -1,0 +1,45 @@
+Quartus Prime Archive log --	/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/relogio.qarlog
+
+Archive:	/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/relogio.qar
+Date:		Mon Oct 28 19:17:11 2024
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/CPU.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/ROMCaracteres.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/ULASomaSub.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/bancoRegistradoresArqRegMem.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/buffer_3_state_1porta.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/buffer_3_state_8portas.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/calcMemAddr.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/controladorVGA.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/conversorHex7Seg.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/decoder3X8.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/decoderInstru.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/divisorGenerico.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/driverVGA.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/edgeDetector.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/flipFlop.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/geradorCaracteres.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/interfaceVGA.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/logicaDeDesvio.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/memoriaR0M.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/memoriaRAM.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/memoriaROMVGA.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/mux3x1tempo.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/muxGenerico.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/muxGenerico2x1.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/muxGenerico4x1.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/pilha.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/registradorGenerico.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/relogio.qpf
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/relogio.qsf
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/relogio.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/simple_dual_port_ram_dual_clock.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/somaConstante.vhd
+/home/brnoschsaloli/Documents/DesComp/projetos/descomp_projeto1/relogio/somadorGenerico.vhd
+/home/brnoschsaloli/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 34 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
