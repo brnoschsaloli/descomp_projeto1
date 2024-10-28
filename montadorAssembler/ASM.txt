@@ -453,11 +453,6 @@ LDI 9, R0          	#Carrega 9 no registrador
 STA 34, R0          	#Define MEM[34] para 9
 LDA 35, R0          	#Carrega MEM[35] (centenas de milhares decremento) no registrador
 CEQi 0, R0         	#Verifica se MEM[35] == 0
-JEQ ZERA_DECREMENTO		#Zera se for igual a 0
-SUBi 1, R0         	#Subtrai 1 de MEM[35]
-STA 35, R0          	#Armazena o novo valor de MEM[35]
-RET             	#Retorna da sub-rotina
-ZERA_DECREMENTO:
 LDI 10, R3    #COLUNA 10
 STA 384, R3   #ARMAZENA NO REGISTRADOR DAS COLUNAS
 LDI 6, R3     #LINHA 6
@@ -467,6 +462,11 @@ STA 386, R3   #ARMAZENA NO REGISTRADOR DA DATA
 STA 387, R3   #MANDA PRA VGA
 LDI 255, R0		#Carrega o registrador com o valor 255
 STA 256, R0		#Armazena o valor do bit0 do registrador no LDR0 ~ LEDR7
+JEQ ZERA_DECREMENTO		#Zera se for igual a 0
+SUBi 1, R0         	#Subtrai 1 de MEM[35]
+STA 35, R0          	#Armazena o novo valor de MEM[35]
+RET             	#Retorna da sub-rotina
+ZERA_DECREMENTO:
 LDI 0, R0		#Carrega o registrador com o valor 0
 STA 258, R0		#Armazena o valor do bit0 do registrador no LDR9
 STA 30, R0	 	#Armazena o valor do registrador na MEM[30] (unidades)
