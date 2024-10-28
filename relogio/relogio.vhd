@@ -243,7 +243,7 @@ MUX_TEMPO:  entity work.mux3x1tempo
         port map( entrada0_MUX => saida_tempo_normal,
                  entrada1_MUX =>  saida_tempo_acelerado_minutos,
 					  entrada2_MUX =>  saida_tempo_acelerado_horas,
-                 seletor_MUX => SW(9) & SW(8),
+                 seletor_MUX => SW(7) & SW(6),
                  saida_MUX => saida_mux_tempo);
 				
 --DETECTORKEY0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_EDGE_KEY0);
