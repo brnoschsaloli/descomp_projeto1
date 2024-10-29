@@ -17,7 +17,7 @@ Este projeto consiste em um relógio programado em VHDL que implementa uma CPU s
 
 ## Declaração sobre a divisão do trabalho
 
-O projeto foi desenvolvido em parceria por **Breno Schneider** e **Thiago Victoriano**. Ambos trabalharam separadamente na montagem do hardware, optando por utilizar como base o projeto do Thiago, uma vez que ele iniciou as implementações primeiro. O código principal em assembly foi elaborado em conjunto, com divisões básicas dentro de cada função de cada parte do código: para o relógio Thiago fez o temporizador, o alarme e seleção de horário AM/PM ou 24h e o Breno fez toda a implementação da VGA e a adaptação do decremento do contador para o relógio. O assembler para o contador foi desenvolvido pelo Thiago, entretanto, as mudanças para o relógio foram feitas pelo Breno. As novas funcionalidades do hardware específicas para o projeto foram implementadas pelo Breno, a implemetação da base de tempo em KEY0 e KEY1, assim como a criação de um MUX para selecionar a base de tempo escolhida com base na ativação de uma chave.
+O projeto foi desenvolvido em parceria por **Breno Schneider** e **Thiago Victoriano**. Ambos trabalharam separadamente na montagem do hardware, optando por utilizar como base o projeto do Thiago, uma vez que ele iniciou as implementações primeiro. O código principal em assembly foi elaborado em conjunto, com divisões básicas dentro de cada função de cada parte do código: para o relógio Thiago e Breno trabalharam juntos no temporizador, Thiago fez o alarme e seleção de horário AM/PM ou 24h e o Breno fez toda a implementação da VGA e a adaptação do decremento do contador para o relógio. O assembler para o contador foi desenvolvido pelo Thiago, entretanto, as mudanças para o relógio foram feitas pelo Breno. As novas funcionalidades do hardware específicas para o projeto foram implementadas pelo Breno, a implemetação da base de tempo em KEY0 e KEY1, assim como a criação de um MUX para selecionar a base de tempo escolhida com base na ativação de uma chave.
 
 ## Funcionamento dos botões e chaves
 
@@ -70,7 +70,7 @@ O projeto foi desenvolvido em parceria por **Breno Schneider** e **Thiago Victor
 
 
 
-- Caso queira implementar um temporizador, coloque nas chaves **SW3 até SW0** o valor dos segundos em binário do horário que você deseja, em seguida clique **KEY2**. Você pode perceber que o relógio irá parar até que você termine de determinar o horário do temporizador e ativar o **LED9**, seguindo a mesma lógica dos segundos até as horas (ou até que todos os leds se apaguem). Em seguida, o temporizador estará configurado e já iniciará a contagem regressiva automaticamente, quando chegar em zero ele apagará o **LED9** e voltará a funcionar como um relógio comum.
+- Caso queira implementar um temporizador, coloque nas chaves **SW3 até SW0** o valor dos segundos em binário do horário que você deseja, em seguida clique **KEY3**. Você pode perceber que o relógio irá parar até que você termine de determinar o horário do temporizador, seguindo a mesma lógica dos segundos até as horas (ou até que todos os leds se apaguem). Em seguida, o temporizador estará configurado e já iniciará a contagem regressiva automaticamente, quando chegar em zero ele acendera todos os leds **LED7~LED0** e voltará a funcionar como um relógio comum.
 
 #### Foi implementada a indicação do horário selecionável, com base em 12 horas (AM/PM) ou 24 horas:
 
